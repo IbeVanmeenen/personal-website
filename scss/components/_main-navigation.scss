@@ -16,16 +16,16 @@
     padding: 0 1em;
     &:hover {
         .main-navigation__header {
-            color: #87C5C7;
+            color: $white-6;
         }
     }
 }
 
 .main-navigation__header {
-    color: $green-light;
+    color: $white-3;
     text-transform: uppercase;
     line-height: 180%;
-    border-bottom: 1px solid $green-light;
+    border-bottom: 1px solid $white-3;
     @include transition(color .3s ease-in-out);
 }
 
@@ -34,7 +34,7 @@
     margin-top: 2rem;
     margin-bottom: .5rem;
     font-size: .6em;
-    color: $blue-dark;
+    color: $black-7;
     text-transform: uppercase;
 }
 
@@ -43,12 +43,12 @@
     padding: 1em 0;
     font-size: .8em;
     font-family: $gilda;
-    color: $green-lighter;
+    color: $white-6;
     text-decoration: none;
-    border-bottom: 1px solid $green-light;
+    border-bottom: 1px solid $white-3;
     @include transition(color .3s ease-in-out);
     &:hover {
-        color: $white
+        color: $white-8;
     }
 }
 

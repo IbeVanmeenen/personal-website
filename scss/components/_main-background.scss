@@ -7,5 +7,18 @@
 
 .main-background--green {
     background: $green-dark;
-    color: $green-lighter;
+    color: $white-8;
+    @include animation(background-fade--green 50s ease-in-out infinite);
+}
+
+@include keyframes(background-fade--green) {
+    0% {
+        background: $green-dark;
+    }
+    50% {
+        background: $green-light;
+    }
+    100% {
+        background: $green-dark;
+    }
 }
