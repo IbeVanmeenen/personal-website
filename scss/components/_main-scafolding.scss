@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Main scafolding
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.center-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 2em 0;
+    @media (min-width: 60rem) {
+      width: 33rem;
+    }
+}
+

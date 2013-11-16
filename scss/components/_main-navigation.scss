@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Main header
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.main-navigation {
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-navigation__column {
+    float: left;
+    width: 33.333333333%;
+    padding: 0 1em;
+    &:hover {
+        .main-navigation__header {
+            color: #87C5C7;
+        }
+    }
+}
+
+.main-navigation__header {
+    color: $green-light;
+    text-transform: uppercase;
+    line-height: 180%;
+    border-bottom: 1px solid $green-light;
+    @include transition(color .3s ease-in-out);
+}
+
+.main-navigation__sub-header {
+    margin-bottom: 0;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    font-size: .6em;
+    color: $blue-dark;
+    text-transform: uppercase;
+}
+
+.main-navigation__link {
+    display: block;
+    padding: 1em 0;
+    font-size: .8em;
+    font-family: $gilda;
+    color: $green-lighter;
+    text-decoration: none;
+    border-bottom: 1px solid $green-light;
+    @include transition(color .3s ease-in-out);
+    &:hover {
+        color: $white
+    }
+}
+

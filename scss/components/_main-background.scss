@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Main background
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.main-background--green {
+    background: $green-dark;
+    color: $green-lighter;
+}

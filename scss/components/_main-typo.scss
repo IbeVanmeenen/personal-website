@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Main typo
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

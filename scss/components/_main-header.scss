@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Main header
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.main-header {
+    width: 90%;
+    margin: 2rem auto;
+    @media (min-width: 60rem) {
+        width: 100%;
+        margin: 16vh 0 10vh 0;
+        text-align: center;
+    }
+}
+
+
+.main-header__head, .main-header__sub {
+    margin:0;
+    text-transform: uppercase;
+}
+
+.main-header__head {
+    font-family: $gilda;
+    font-size: 1.3em;
+    letter-spacing: .2em;
+    @media (min-width: 60rem) {
+        font-size: 3rem;
+    }
+}
+
+.main-header__sub {
+    font-size: 1em;
+    color: $green-light;
+    letter-spacing: .3em;
+    @media (min-width: 60rem) {
+        font-size: 1.5rem;
+    }
+}
