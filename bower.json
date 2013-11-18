@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "bourbon": "latest",
-    "modularized-normalize-scss": "latest"
+    "modularized-normalize-scss": "latest",
+    "prism": "gh-pages"
   }
 }

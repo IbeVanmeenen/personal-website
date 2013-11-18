@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Main article
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+.main-article {
+    font-family: $gilda;
+    line-height: 180%;
+}
+
+.main-article__header {
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;
+    margin-bottom: 10vh;
+}
+
+.main-article__header--js {
+    background-image: url('#{$backgrounds}/js-splash.jpg');
+}
