@@ -16,43 +16,89 @@
 <body>
     <main role="main">
         <article class="main-article">
-            <header class="main-article__header main-article__header--js">
-
+            <figure class="main-article__splash main-article__splash--js"></figure>
+            <header class="center-container">
+                <h1>Start and pause Youtube-embeds in Flexslider</h1>
+                <h2>Controle Youtube-embeds trough javascript</h2>
             </header>
-
-            <section class="center-container">
-                <h1 class="main-article__header__head">Title</h1>
-                <h2 class="main-article__header__sub">Subtitle</h2>
-                <header>
-                    <h3>slmkdfs mslkdfj </h3>
-                </header>
+            <section class="center-container main-article__section">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
+                    blabla
                 </p>
                 <p>
-                    <pre><code class="language-css">p { color: red }</code></pre>
+                    <a href="https://developers.google.com/youtube/js_api_reference" target="_blank">js-api reference</a>
+                </p>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Full code</h3>
+                </header>
+                <p>
+<pre>
+<code class="language-markup">
+src="//www.youtube.com/embed/123456?enablejsapi=1"
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+var youtubeVideos, onYouTubeIframeAPIReady, initSlider;
+
+// Youtube
+youtubeVideos = {
+    done: false,
+    initFlag: true,
+    init: function() {
+        var tag, firstScriptTag;
+        // Insert the iframe_api script on first run
+        if (youtubeVideos.initFlag) {
+            tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            youtubeVideos.initFlag = false;
+        }
+    },
+    players: [],
+    pauseVideo: function(player) {
+        player.pauseVideo();
+    }
+};
+
+// When the YouTube API is ready to be used
+onYouTubeIframeAPIReady = function() {
+    // Loop over the Youtube iframes
+    $("iframe[src^='http://www.youtube.com/embed/']").each(function(i) {
+        var player = new YT.Player($(this).get()[0]);
+        $(this).data('index', i);
+        youtubeVideos.players.push(player);
+    });
+};
+
+// Init youtubeVideos
+youtubeVideos.init();
+
+// Init Flexslider
+initSliders = function() {
+    $('#slider').flexslider({
+        slideshow: false,
+        video: true,
+        before: function() {
+            // Pause all videos the slider
+            $("#slider iframe[src^='http://www.youtube.com/embed/']").each(function(){
+                youtubeVideos.pauseVideo(youtubeVideos.players[$(this).data('index')]);
+            });
+        }
+    });
+};
+</code>
+</pre>
                 </p>
             </section>
 
-            <section class="center-container">
+            <section class="center-container main-article__section">
                 <header>
                     <h3>slmkdfs mslkdfj </h3>
                 </header>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
-                </p>
-            </section>
-
-            <section class="center-container">
-                <header>
-                    <h3>slmkdfs mslkdfj </h3>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
-                </p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
                 </p>

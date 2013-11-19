@@ -10,13 +10,17 @@
     line-height: 180%;
 }
 
-.main-article__header {
+.main-article__section {
+    margin-bottom: 4em;
+}
+
+.main-article__splash {
     background-size: cover;
     background-attachment: fixed;
     height: 50vh;
-    margin-bottom: 10vh;
+    margin-bottom: 4em;
 }
 
-.main-article__header--js {
+.main-article__splash--js {
     background-image: url('#{$backgrounds}/js-splash.jpg');
 }

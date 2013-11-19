@@ -5,12 +5,26 @@
    Style guide: https://github.com/necolas/idiomatic-css
    ========================================================================== */
 
+html, body {
+    min-height: 100%;
+}
+
+body {
+    padding-bottom: 4em;
+}
+
+img {
+    max-width: 100%;
+}
+
 .center-container {
     width: 90%;
     margin: 0 auto;
-    padding: 0 0 2em 0;
+    @media (min-width: 40rem) {
+        width: 35rem;
+    }
     @media (min-width: 60rem) {
-      width: 33rem;
+        width: 45rem;
     }
 }
 
