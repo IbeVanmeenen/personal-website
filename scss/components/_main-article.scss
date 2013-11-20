@@ -5,15 +5,46 @@
    Style guide: https://github.com/necolas/idiomatic-css
    ========================================================================== */
 
+/* General
+   ========================================================================== */
 .main-article {
     font-family: $gilda;
     line-height: 180%;
 }
 
+
+/* Header
+   ========================================================================== */
+.main-article__header {
+    margin-bottom: 2em;
+}
+
+.main-article__header__head, .main-article__header__sub {
+    margin: 0;
+}
+
+.main-article__header__head {
+
+}
+
+.main-article__header__sub {
+    color: $green-dark;
+    font-size: 1.2em;
+}
+
+/* Section
+   ========================================================================== */
 .main-article__section {
     margin-bottom: 4em;
 }
 
+.main-article__section__header {
+    font-size: 1.5em;
+}
+
+
+/* Splash
+   ========================================================================== */
 .main-article__splash {
     background-size: cover;
     background-attachment: fixed;

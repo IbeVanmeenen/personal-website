@@ -20,10 +20,10 @@ img {
 .center-container {
     width: 90%;
     margin: 0 auto;
-    @media (min-width: 40rem) {
+    @media (min-width: $screen--small) {
         width: 35rem;
     }
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         width: 45rem;
     }
 }

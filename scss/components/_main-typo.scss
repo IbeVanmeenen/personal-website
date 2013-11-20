@@ -11,10 +11,10 @@ html {
 }
 
 body {
-    @media (min-width: 40rem) {
+    @media (min-width: $screen--small) {
         font-size: 20px;
     }
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         font-size: 22px;
     }
 }

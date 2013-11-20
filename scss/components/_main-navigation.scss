@@ -7,14 +7,14 @@
 
 .main-navigation {
     overflow: hidden;
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         text-align: center;
     }
 }
 
 .main-navigation__column {
     margin-bottom: 4em;
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         float: left;
         width: 33.333333333%;
         margin-bottom: 0;

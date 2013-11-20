@@ -7,7 +7,7 @@
 
 .main-header {
     margin: 2rem auto;
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         width: 100%;
         margin: 16vh auto 10vh auto;
         text-align: center;
@@ -24,7 +24,7 @@
     font-family: $gilda;
     font-size: 1.3em;
     letter-spacing: .2em;
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         font-size: 3rem;
     }
 }
@@ -33,7 +33,7 @@
     font-size: 1em;
     letter-spacing: .3em;
     color: $black-3;
-    @media (min-width: 60rem) {
+    @media (min-width: $screen--big) {
         font-size: 1.5rem;
     }
 }
