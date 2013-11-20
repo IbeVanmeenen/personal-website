@@ -5,11 +5,9 @@
    Style guide: https://github.com/necolas/idiomatic-css
    ========================================================================== */
 
+@import "main-scafolding";
 @import "main-typo";
 
-@import "main-background";
 @import "main-header";
-@import "main-scafolding";
 @import "main-navigation";
-
 @import "main-article";

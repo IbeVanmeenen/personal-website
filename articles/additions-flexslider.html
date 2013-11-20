@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ibe Vanmeenen</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../build/css/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <main role="main">
+        <article class="main-article">
+            <figure class="main-article__splash main-article__splash--js"></figure>
+            <header class="center-container">
+                <h1>Additions to Flexslider</h1>
+                <h2>Youtube-embeds and url-targeting</h2>
+            </header>
+            <section class="center-container main-article__section">
+                <p>
+                    blabla
+                </p>
+                <p>
+                    <a href="https://developers.google.com/youtube/js_api_reference" target="_blank">js-api reference</a>
+                </p>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Full code</h3>
+                </header>
+                <p>
+<pre>
+<code class="language-markup">
+src="//www.youtube.com/embed/123456?enablejsapi=1"
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+var youtubeVideos, onYouTubeIframeAPIReady, initSlider;
+
+// Youtube
+youtubeVideos = {
+    done: false,
+    initFlag: true,
+    init: function() {
+        var tag, firstScriptTag;
+        // Insert the iframe_api script on first run
+        if (youtubeVideos.initFlag) {
+            tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            youtubeVideos.initFlag = false;
+        }
+    },
+    players: [],
+    pauseVideo: function(player) {
+        player.pauseVideo();
+    }
+};
+
+// When the YouTube API is ready to be used
+onYouTubeIframeAPIReady = function() {
+    // Loop over the Youtube iframes
+    $("iframe[src^='http://www.youtube.com/embed/']").each(function(i) {
+        var player = new YT.Player($(this).get()[0]);
+        $(this).data('index', i);
+        youtubeVideos.players.push(player);
+    });
+};
+
+// Init youtubeVideos
+youtubeVideos.init();
+
+// Init Flexslider
+initSliders = function() {
+    $('#slider').flexslider({
+        slideshow: false,
+        video: true,
+        before: function() {
+            // Pause all videos the slider
+            $("#slider iframe[src^='http://www.youtube.com/embed/']").each(function(){
+                youtubeVideos.pauseVideo(youtubeVideos.players[$(this).data('index')]);
+            });
+        }
+    });
+};
+</code>
+</pre>
+                </p>
+            </section>
+
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>slmkdfs mslkdfj </h3>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, vel, doloribus, a doloremque porro placeat mollitia et corrupti ratione perferendis voluptatum nulla aliquid aliquam est ex reiciendis earum. Odit, similique, pariatur, eos itaque dolorum cumque labore quae qui et provident porro dicta recusandae minima rem nihil. Facere, suscipit, soluta amet nemo at inventore esse accusantium iure assumenda laboriosam ut tempore dolorum incidunt corrupti quos similique labore aut vel blanditiis nesciunt neque laborum atque delectus iusto perspiciatis. Neque, placeat, praesentium, quaerat fuga reiciendis quis consectetur aliquid quas voluptatibus numquam totam ab iusto quia ipsam dicta voluptates adipisci sequi blanditiis ad alias?
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer role="footer"></footer>
+
+    <script src="../vendor/prism/prism.js"></script>
+</body>
+</html>

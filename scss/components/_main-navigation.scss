@@ -6,26 +6,27 @@
    ========================================================================== */
 
 .main-navigation {
-    text-align: center;
     overflow: hidden;
+    @media (min-width: 60rem) {
+        text-align: center;
+    }
 }
 
 .main-navigation__column {
-    float: left;
-    width: 33.333333333%;
-    padding: 0 1em;
-    &:hover {
-        .main-navigation__header {
-            color: $white-6;
-        }
+    margin-bottom: 4em;
+    @media (min-width: 60rem) {
+        float: left;
+        width: 33.333333333%;
+        margin-bottom: 0;
+        padding: 0 1em;
     }
 }
 
 .main-navigation__header {
-    color: $white-3;
+    color: $green-light;
     text-transform: uppercase;
     line-height: 180%;
-    border-bottom: 1px solid $white-3;
+    border-bottom: 1px solid $black-3;
     font-size: .8em;
     letter-spacing: .2em;
     @include transition(color .3s ease-in-out);
@@ -36,21 +37,22 @@
     margin-top: 2rem;
     margin-bottom: .5rem;
     font-size: .6em;
-    color: $black-7;
+    color: $green-dark;
     text-transform: uppercase;
 }
 
 .main-navigation__link {
     display: block;
     padding: 1em 0;
-    font-size: 1em;
+    font-size: .8em;
+    line-height: 140%;
     font-family: $gilda;
-    color: $white-6;
+    color: $black-6;
     text-decoration: none;
-    border-bottom: 1px solid $white-3;
+    border-bottom: 1px solid $black-3;
     @include transition(color .3s ease-in-out);
     &:hover {
-        color: $white-8;
+        color: $black-8;
     }
 }
 
