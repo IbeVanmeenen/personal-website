@@ -30,6 +30,12 @@
     font-size: .8em;
     letter-spacing: .2em;
     @include transition(color .3s ease-in-out);
+    small {
+        color: $black-3;
+        font-size: .4em;
+        line-height: 120%;
+        display: block;
+    }
 }
 
 .main-navigation__sub-header {
@@ -52,7 +58,7 @@
     border-bottom: 1px solid $black-3;
     @include transition(color .3s ease-in-out);
     &:hover {
-        color: $black-8;
+        color: $green-dark;
     }
 }
 
