@@ -33,14 +33,14 @@
                     <h3 class="main-article__section__head">Url targeting</h3>
                 </header>
                 <p>
-                    Sometimes it is usefull that you can tell trough the url witch slide of the slider should be active. In this example, we can append a '#slide2' to the url, and the Flexslider will start at the second slide.
+                    Sometimes it is usefull that you can tell trough the url wich slide of the slider should be active. In the following example, we can append a '#slide2' to the url, and the Flexslider will start at the second slide.
                 </p>
                 <h4 class="main-article__section__sub">
                     Get the current url
                 </h4>
                 <p>
                     First, we need to get the current url.
-                    We use 'document.URL' for that. I choose this one above 'window.location.href' because we only need to get the url (not set it), and it's 91% faster than window.location.href (<a href="http://jsperf.com/document-url-vs-window-location-href" target="_blank">jsperf test</a>).
+                    You can use 'document.URL' for that. I choose this one above 'window.location.href' because we only need to get the url (not set it), and it's 91% faster than window.location.href (<a href="http://jsperf.com/document-url-vs-window-location-href" target="_blank">jsperf test</a>).
                     The url will be stored in the variable 'loc'.
                 </p>
 <pre>
@@ -76,7 +76,7 @@ initSlider = function() {
                     Check if the value is a number
                 </h4>
                 <p>
-                    Let's be shure that the retrieved number is an legal number. We do this with the 'isNaN' function (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank">more about isNaN()</a>). In the future this will be replaced by the 'Number.isNaN()' function. But the support for this new function is not quite there yet (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN?redirectlocale=en-US&am;redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FNumber%2FisNaN#Browser_compatibility" target="_blank">more about Number.isNaN()</a>)
+                    Let's be sure that the retrieved number is an legal number. We do this with the 'isNaN' function (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank">more about isNaN()</a>). In the future this will be replaced by the 'Number.isNaN()' function. But the support for this new function is not quite there yet (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN?redirectlocale=en-US&am;redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FNumber%2FisNaN#Browser_compatibility" target="_blank">more about Number.isNaN()</a>).
                 </p>
                 <p>
 <pre>
@@ -101,8 +101,8 @@ initSlider = function() {
                     Initialize the slider
                 </h4>
                 <p>
-                    Now we need to initialize the Flexslider and tell it at which slide he should show first.
-                    Flexslider provides you with the 'startAt' propertie to set the starting slide.
+                    Now we need to initialize the Flexslider and tell it at which slide he should start at.
+                    Flexslider provides you with the 'startAt' property to set the starting slide.
                     Because the first slide has the value 0, we do -1 of the value we got from the url.
                 </p>
                 <p>
