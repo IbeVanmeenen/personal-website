@@ -38,9 +38,6 @@ intermediate
 publish
 .idea
 node_modules
-vendor
-css
-build
 
 # build script local files
 build/buildinfo.properties
