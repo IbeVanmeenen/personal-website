@@ -1,0 +1,11 @@
+{
+  "name": "modularized-normalize-scss",
+  "version": "2.1.4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
