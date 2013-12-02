@@ -4,7 +4,6 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-sass": "latest",
-    "grunt-uncss": "latest",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-connect": "latest",
