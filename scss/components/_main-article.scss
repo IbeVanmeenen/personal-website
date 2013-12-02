@@ -19,27 +19,23 @@
     margin-bottom: 2em;
 }
 
-.main-article__header__head, .main-article__header__sub {
-    margin: 0;
-}
-
 .main-article__header__head {
-
+    margin-bottom: .5em;
+    @media (min-width: $screen--small) {
+        margin-bottom: 0;
+    }
 }
 
 .main-article__header__sub {
     color: $green-dark;
     font-size: 1.2em;
+    margin: 0;
 }
 
 /* Section
    ========================================================================== */
 .main-article__section {
     margin-bottom: 4em;
-}
-
-.main-article__section__header {
-
 }
 
 .main-article__section__sub {
@@ -54,10 +50,16 @@
 /* Splash
    ========================================================================== */
 .main-article__splash {
-    background-size: cover;
-    background-attachment: fixed;
-    height: 50vh;
-    margin-bottom: 4em;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 6em;
+    margin-bottom: 2em;
+    @media (min-width: $screen--small) {
+        height: 50vh;
+        margin-bottom: 4em;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 }
 
 .main-article__splash--js {
