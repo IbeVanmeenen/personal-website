@@ -126,12 +126,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-svg2png');
     grunt.loadNpmTasks('grunt-notify');
 
-    grunt.registerTask('server', [
+    grunt.registerTask('serve', [
         'connect',
         'watch'
     ]);
 
-    grunt.registerTask('default', ['server']);
+    grunt.registerTask('default', ['serve']);
     grunt.registerTask('build', ['sass']);
 
 };
