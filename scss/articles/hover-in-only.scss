@@ -23,6 +23,7 @@
     margin: 0 0 2em 0;
     background: url('#{$backgrounds}/demo-container-hover-in-only.jpg');
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .btn-round {

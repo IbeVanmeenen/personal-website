@@ -18,17 +18,17 @@
     <main role="main">
         <article class="main-article">
             <header class="main-article__splash main-article__splash--text main-article__splash--green center-box">
-                <h1>Controlling ':hover' animations</h1>
+                <h1>Controlling ':hover' transitions</h1>
             </header>
             <section class="center-container main-article__section">
                 <p>
-                    I found a neat little trick to only animate the 'hovering in' or 'hovering out' of an element and thus discarding the hovering out or in. This with pure css of course.
+                    I found a neat little trick to only transition the 'hovering in' or 'hovering out' of an element and thus discarding the hovering out or in. This of course with pure css.
                 </p>
                 <p>
-                    The main and only trick here is to activate or deactivate the animation on the pseudo-class ':hover' of the element when hovering over it.
+                    The main and only trick here is to activate or deactivate the transition on the pseudo-class ':hover' of the element when hovering over it.
                 </p>
                 <p>
-                    In the example, we will change how we animate the pseudo-element ':before'.
+                    In the example used here, we will alternate when we transition the pseudo-element '::before'.
                 </p>
             </section>
             <section class="center-container main-article__section">
@@ -40,7 +40,7 @@
                 <header>
                     <h3>Basic - No animation on pseudo-element</h3>
                     <p>
-                        For starters, no animation is added to the pseudo-element '::before'. I the code below you will see what we will animate on hover later on.
+                        For starters, no transition is added to the pseudo-element '::before'. I the code below you will see what we will transition on hover later on.
                     </p>
                 </header>
                 <div class="demo-container center-box">
@@ -88,10 +88,10 @@
             </section>
             <section class="center-container main-article__section">
                 <header>
-                    <h3>Hover in &amp; out animation</h3>
+                    <h3>Hover in &amp; out transition</h3>
                 </header>
                 <p>
-                    In this case we have put the animation on the pseudo-element itself. Thats why the hover-in and hover-out are now animated.
+                    In this case we have put the transition on the default state of the pseudo-element. Thats why the hover-in and hover-out are now transitioned.
                 </p>
                 <div class="demo-container center-box">
                     <button type="button" class="btn-round btn-round--hover-all">
@@ -110,10 +110,10 @@
             </section>
             <section class="center-container main-article__section">
                 <header>
-                    <h3>Hover in animation</h3>
+                    <h3>Hover in transition</h3>
                 </header>
                 <p>
-                    If we put the animation only in the ':hover' pseudo-class of the element, the animation will only happen when hovering, thus only when hovering in.
+                    If we put the transition only in the ':hover' pseudo-class of the element, the transition will only happen when hovering, thus only when hovering in.
                 </p>
                 <div class="demo-container center-box">
                     <button type="button" class="btn-round btn-round--hover-in">
@@ -134,10 +134,10 @@
             </section>
             <section class="center-container main-article__section">
                 <header>
-                    <h3>Hover out animation</h3>
+                    <h3>Hover out transition</h3>
                 </header>
                 <p>
-                    If we put the animation on the element itself, but deactivate it when hovering, the animation will only happen when you hover out.
+                    If we put the transition on the element itself, but deactivate it when hovering, the transition will only happen on hovering out.
                 </p>
                 <div class="demo-container center-box">
                     <button type="button" class="btn-round btn-round--hover-out">
