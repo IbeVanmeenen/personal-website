@@ -32,6 +32,7 @@
     margin: 0;
 }
 
+
 /* Section
    ========================================================================== */
 .main-article__section {
@@ -53,15 +54,24 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     height: 6em;
-    margin-bottom: 2em;
+    margin: 0 0 2em 0;
     @media (min-width: $screen--small) {
         height: 50vh;
-        margin-bottom: 4em;
+        margin: 0 0 4em 0;
         background-size: cover;
         background-attachment: fixed;
     }
 }
 
+.main-article__splash--text {
+    padding: 2em;
+}
+
 .main-article__splash--js {
     background-image: url('#{$backgrounds}/js-splash.jpg');
+}
+
+.main-article__splash--green {
+    background: $green-light;
+    color: $white-full;
 }

@@ -64,7 +64,8 @@ module.exports = function (grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    'build/css/style.css': 'scss/style.scss'
+                    'build/css/style.css': 'scss/style.scss',
+                    'build/css/hover-in-only.css': 'scss/articles/hover-in-only.scss'
                 }
             }
         },

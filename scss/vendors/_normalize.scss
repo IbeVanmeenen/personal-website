@@ -26,17 +26,13 @@
 
 /* Typography
    ========================================================================== */
-@import "../../vendor/modularized-normalize-scss/typography/headings";
-//@import "../../vendor/modularized-normalize-scss/typography/abbr";
-//@import "../../vendor/modularized-normalize-scss/typography/fix-bolder";
-//@import "../../vendor/modularized-normalize-scss/typography/dfn";
-//@import "../../vendor/modularized-normalize-scss/typography/hr";
-//@import "../../vendor/modularized-normalize-scss/typography/mark";
-//@import "../../vendor/modularized-normalize-scss/typography/fix-monospace";
-//@import "../../vendor/modularized-normalize-scss/typography/pre";
-//@import "../../vendor/modularized-normalize-scss/typography/q";
-//@import "../../vendor/modularized-normalize-scss/typography/small";
-//@import "../../vendor/modularized-normalize-scss/typography/sub-and-sup";
+//@import "../../vendor/modularized-normalize-scss/text-level/abbr";
+//@import "../../vendor/modularized-normalize-scss/text-level/fix-bolder";
+//@import "../../vendor/modularized-normalize-scss/text-level/dfn";
+@import "../../vendor/modularized-normalize-scss/text-level/headings";
+//@import "../../vendor/modularized-normalize-scss/text-level/mark";
+//@import "../../vendor/modularized-normalize-scss/text-level/small";
+//@import "../../vendor/modularized-normalize-scss/text-level/sub-and-sup";
 
 
 /* Embedded content
@@ -45,9 +41,12 @@
 @import "../../vendor/modularized-normalize-scss/embed/svg";
 
 
-/* Figures
+/* Grouping content
    ========================================================================== */
-@import "../../vendor/modularized-normalize-scss/figures/figure";
+@import "../../vendor/modularized-normalize-scss/grouping/figure";
+//@import "grouping/hr";
+//@import "grouping/pre";
+//@import "grouping/fix-monospace";
 
 
 /* Forms

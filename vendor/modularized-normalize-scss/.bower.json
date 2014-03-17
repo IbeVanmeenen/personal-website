@@ -1,19 +1,20 @@
 {
   "name": "modularized-normalize-scss",
-  "version": "2.1.4",
+  "version": "3.0.0",
   "ignore": [
     "**/.*",
+    "Gruntfile.js",
+    "bower.json",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "package.json",
+    "tmp"
   ],
   "homepage": "https://github.com/hail2u/normalize.scss",
-  "_release": "2.1.4",
+  "_release": "3.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "v2.1.4",
-    "commit": "93055b0006c252aad3b6c4d06ceb4db9dda03b27"
+    "tag": "v3.0.0",
+    "commit": "1635efd81ab20e5097545e6a9d50e689b05233ac"
   },
   "_source": "git://github.com/hail2u/normalize.scss.git",
   "_target": "*",
