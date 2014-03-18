@@ -55,6 +55,7 @@
     background-repeat: no-repeat;
     height: 6em;
     margin: 0 0 2em 0;
+    color: $white-full;
     @media (min-width: $screen--small) {
         height: 50vh;
         margin: 0 0 4em 0;
@@ -72,6 +73,9 @@
 }
 
 .main-article__splash--green {
-    background: $green-light;
-    color: $white-full;
+    background: $green-lighter;
+}
+
+.main-article__splash--purple {
+    background: $purple-lighter;
 }

@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                 }
             },
             livereload: {
-                files: ['build/css/style.css', ibevanmeenen.js, ibevanmeenen.html, ibevanmeenen.img, ibevanmeenen.svg],
+                files: ['build/css/*.css', ibevanmeenen.js, ibevanmeenen.html, ibevanmeenen.img, ibevanmeenen.svg],
                 options: {
                     livereload: true
                 }
@@ -65,7 +65,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'build/css/style.css': 'scss/style.scss',
-                    'build/css/hover-in-only.css': 'scss/articles/hover-in-only.scss'
+                    'build/css/hover-in-only.css': 'scss/articles/hover-in-only.scss',
+                    'build/css/border-on-icon.css': 'scss/articles/border-on-icon.scss'
                 }
             }
         },
