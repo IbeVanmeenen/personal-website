@@ -61,6 +61,7 @@
     @include transition(color .3s ease-in-out);
     &:hover {
         color: $green-dark;
+        text-decoration: none;
     }
     @media (min-width: $screen--big) {
         font-size: .8em;
