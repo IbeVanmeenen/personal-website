@@ -1,31 +1,15 @@
-/*
-    change myApplication to the projectname
-*/
+var app = app || {};
 
-var myApplication = (function($, window, undefined) {
+var app = (function(window, undefined) {
 
-    /*
-        declare all your methods here
-    */
-    var init, initFunction;
+    var init;
 
     init = function() {
-        initFunction();
-    };
-
-    initFunction = function() {
 
     };
 
-    /*
-        Put the methods you want to be public in this object
-    */
     return {
         init: init
     };
 
-}(jQuery, window));
-
-$(function() {
-    myApplication.init();
-});
+}(window));

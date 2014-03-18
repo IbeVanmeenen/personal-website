@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Home blocks
+
+   ========================================================================== */
+
+.home-blocks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.home-blocks--article-active, .home-blocks--project-active {
+    .home-block--title {
+        @media (min-width: $screen--big) {
+            .home-block__header {
+                font-size: 2rem;
+            }
+            .home-block__header--sub {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+.home-blocks--article-active {
+    @media (min-width: $screen--big) {
+        .home-block--title {
+            order: 2;
+            width: 50vw;
+            flex: 1 1 50%;
+        }
+        .home-block--article {
+            order: 1;
+        }
+        .home-block--project {
+            order: 2;
+        }
+    }
+}
+
+.home-blocks--project-active {
+    @media (min-width: $screen--big) {
+        .home-block--title {
+            order: 1;
+            width: 50vw;
+            flex: 1 1 50%;
+        }
+        .home-block--article {
+            order: 3;
+        }
+        .home-block--project {
+            order: 2;
+        }
+    }
+}
+
+.home-block {
+    height: 50vh;
+    width: 50vw;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.home-block--title {
+    width: 100vw;
+    flex: 1 1 100%;
+    order: 1;
+}
+
+.home-block--article, .home-block--project {
+    width: 100vw;
+    flex: 1 1 100%;
+    @media (min-width: $screen--big) {
+        width: 50vw;
+        flex: 1 1 50%;
+    }
+}
+
+.home-block--article {
+    order: 2;
+}
+
+.home-block--project {
+    order: 3;
+}
+
+.home-block--link {
+    cursor: pointer;
+    &:hover:not(.home-block--active) {
+        .home-block__header {
+            color: $white-full;
+        }
+    }
+}
+
+.home-block--active {
+    height: 100vh;
+    .home-block__header--smaller {
+        color: $white-6;
+    }
+    .home-block__navigation {
+        display: block;
+    }
+}
+
+.home-block--green {
+    background: $green-lighter;
+}
+
+.home-block--purple {
+    background: $purple-lighter;
+}
+
+.home-block--blue {
+    background: $blue-light;
+}
+
+
+.home-block__header {
+    margin: 0;
+    font-family: $gilda;
+    font-size: 1.6rem;
+    color: $white-8;
+    text-transform: uppercase;
+    text-align: center;
+    @include transition(color .3s ease);
+    @media (min-width: $screen--big) {
+        font-size: 3rem;
+    }
+}
+
+.home-block__header--sub {
+    font-size: .8rem;
+    letter-spacing: .2em;
+    color: $white-6;
+    @media (min-width: $screen--big) {
+        font-size: 1.3rem;
+    }
+}
+
+.home-block__header--smaller {
+    margin: 0;
+    font-size: 1.2rem;
+    color: $white-8;
+    @media (min-width: $screen--big) {
+        font-size: 2rem;
+    }
+}
+
+.home-block__navigation {
+    display: none;
+    text-align: center;
+}
+
+.home-block__navigation__header {
+    color: $white-3;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .8rem;
+    margin: 3em 0 1em;
+}
+
+.home-block__navigation__link {
+    display: block;
+    padding: 1em;
+    font-family: $gilda;
+    color: $white-full;
+    text-decoration: none;
+    border-bottom: 1px solid $white-3;
+    @include transition(background .3s ease-in-out);
+    &:hover {
+        background: $white-3;
+        text-decoration: none;
+    }
+    @media (min-width: $screen--big) {
+        font-size: .8em;
+        line-height: 140%;
+    }
+}
+
+.home-block__navigation__link__tag {
+    display: block;
+    font-size: .7em;
+}
