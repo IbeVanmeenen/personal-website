@@ -6,7 +6,10 @@
 .home-blocks {
     display: flex;
     flex-flow: row wrap;
+    align-items: stretch;
     justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
 }
 
 .home-blocks--article-active, .home-blocks--project-active {
@@ -22,18 +25,27 @@
     }
 }
 
+.home-blocks--article-active, .home-blocks--project--active {
+    flex-flow: column wrap;
+    .home-block {
+        height: auto;
+        width: 50vw;
+    }
+}
+
 .home-blocks--article-active {
     @media (min-width: $screen--big) {
         .home-block--title {
             order: 2;
-            width: 50vw;
             flex: 1 1 50%;
         }
         .home-block--article {
             order: 1;
+            flex: 1 1 100%;
         }
         .home-block--project {
-            order: 2;
+            order: 3;
+            flex: 1 1 50%;
         }
     }
 }
@@ -42,40 +54,37 @@
     @media (min-width: $screen--big) {
         .home-block--title {
             order: 1;
-            width: 50vw;
             flex: 1 1 50%;
         }
         .home-block--article {
             order: 3;
+            flex: 1 1 50%;
         }
         .home-block--project {
             order: 2;
+            flex: 1 1 100%;
         }
     }
 }
 
 .home-block {
-    height: 50vh;
-    width: 50vw;
-    padding: 2em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: auto;
+    height: 50vh;
+    padding: 2em 0;
 }
 
 .home-block--title {
-    width: 100vw;
     flex: 1 1 100%;
     order: 1;
 }
 
 .home-block--article, .home-block--project {
-    width: 100vw;
-    flex: 1 1 100%;
+    flex: 1 1 50%;
     @media (min-width: $screen--big) {
-        width: 50vw;
         flex: 1 1 50%;
     }
 }
