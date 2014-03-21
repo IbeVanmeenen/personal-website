@@ -11,17 +11,20 @@ app.homeblocks = (function(window, undefined) {
 
     homeBlocks = function() {
         // Find blocks
-        _titleBlock = document.getElementById('home-block__title');
-        _articleBlock = document.getElementById('home-block__article');
-        _projectBlock = document.getElementById('home-block__project');
-        _homeBlockContainer = document.getElementById('home-blocks');
+        _block1 = document.getElementById('home-block--one');
+        _block2 = document.getElementById('home-block--two');
+        _block3 = document.getElementById('home-block--three');
+        _blockContainer = document.getElementById('home-blocks');
 
         // Block clicks
-        _articleBlock.addEventListener('click', function() {
-            updateBlocks(this, 'article');
+        _block1.addEventListener('click', function() {
+            updateBlocks(this, 1);
         });
-        _projectBlock.addEventListener('click', function() {
-            updateBlocks(this, 'project');
+        _block2.addEventListener('click', function() {
+            updateBlocks(this, 2);
+        });
+        _block3.addEventListener('click', function() {
+            updateBlocks(this, 3);
         });
 
         // Prevent bubbling up of click event home-block__navigation__link
@@ -32,19 +35,26 @@ app.homeblocks = (function(window, undefined) {
         });
     };
 
-    updateBlocks = function(_this, _blocktype) {
+    updateBlocks = function(_this, _block) {
         // Toggle active class
-        _this.classList.toggle('home-block--active');
+        if(_block !== 1) {
+            _this.classList.toggle('home-block--active');
+        }
 
         // Specific actions
-        if(_blocktype === 'article') {
-            _projectBlock.classList.remove('home-block--active');
-            _homeBlockContainer.classList.toggle('home-blocks--article-active');
-            _homeBlockContainer.classList.remove('home-blocks--project-active');
+        if(_block === 2) {
+            _block3.classList.remove('home-block--active');
+            _blockContainer.classList.toggle('home-blocks--two-active');
+            _blockContainer.classList.remove('home-blocks--three-active');
+        } else if(_block === 3 ) {
+            _block2.classList.remove('home-block--active');
+            _blockContainer.classList.toggle('home-blocks--three-active');
+            _blockContainer.classList.remove('home-blocks--two-active');
         } else {
-            _articleBlock.classList.remove('home-block--active');
-             _homeBlockContainer.classList.toggle('home-blocks--project-active');
-            _homeBlockContainer.classList.remove('home-blocks--article-active');
+            _block2.classList.remove('home-block--active');
+            _block3.classList.remove('home-block--active');
+            _blockContainer.classList.remove('home-blocks--two-active');
+            _blockContainer.classList.remove('home-blocks--three-active');
         }
     };
 

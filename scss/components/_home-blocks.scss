@@ -3,6 +3,8 @@
 
    ========================================================================== */
 
+/* Container
+   ========================================================================== */
 .home-blocks {
     display: flex;
     flex-flow: row wrap;
@@ -12,9 +14,18 @@
     height: 100vh;
 }
 
-.home-blocks--article-active, .home-blocks--project-active {
-    .home-block--title {
-        @media (min-width: $screen--big) {
+
+/* Container states
+   ========================================================================== */
+.home-blocks--two-active, .home-blocks--three-active {
+    @media (min-width: $screen--big) {
+        flex-flow: column wrap;
+        .home-block {
+            height: auto;
+            width: 50vw;
+        }
+        .home-block--one {
+            cursor: pointer;
             .home-block__header {
                 font-size: 2rem;
             }
@@ -25,94 +36,96 @@
     }
 }
 
-.home-blocks--article-active, .home-blocks--project--active {
-    flex-flow: column wrap;
-    .home-block {
-        height: auto;
-        width: 50vw;
-    }
-}
-
-.home-blocks--article-active {
+.home-blocks--two-active {
     @media (min-width: $screen--big) {
-        .home-block--title {
+        .home-block--one {
             order: 2;
-            flex: 1 1 50%;
+            flex: 1 1 0;
         }
-        .home-block--article {
+        .home-block--two {
             order: 1;
             flex: 1 1 100%;
         }
-        .home-block--project {
+        .home-block--three {
             order: 3;
-            flex: 1 1 50%;
+            flex: 1 1 0;
         }
     }
 }
 
-.home-blocks--project-active {
+.home-blocks--three-active {
     @media (min-width: $screen--big) {
-        .home-block--title {
+        .home-block--one {
             order: 1;
-            flex: 1 1 50%;
+            flex: 1 1 0;
         }
-        .home-block--article {
-            order: 3;
-            flex: 1 1 50%;
+        .home-block--two {
+            order: 2;
+            flex: 1 1 0;
         }
-        .home-block--project {
+        .home-block--three {
             order: 2;
             flex: 1 1 100%;
         }
     }
 }
 
+/* Block
+   ========================================================================== */
 .home-block {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: auto;
-    height: 50vh;
+    height: auto;
     padding: 2em 0;
+    @media (min-width: $screen--big) {
+        height: 50vh;
+    }
 }
 
-.home-block--title {
+.home-block--one {
     flex: 1 1 100%;
     order: 1;
 }
 
-.home-block--article, .home-block--project {
-    flex: 1 1 50%;
+.home-block--two {
+    order: 2;
+}
+
+.home-block--three {
+    order: 3;
+}
+
+.home-block--two, .home-block--three {
+    flex: 1 1 100%;
     @media (min-width: $screen--big) {
         flex: 1 1 50%;
     }
 }
 
-.home-block--article {
-    order: 2;
+
+/* Block states
+   ========================================================================== */
+.home-block--active {
+    .home-block__header--smaller {
+        color: $white-6;
+    }
+    .home-block__navigation {
+        display: block;
+    }
 }
 
-.home-block--project {
-    order: 3;
-}
 
+/* Block alternatives
+   ========================================================================== */
 .home-block--link {
     cursor: pointer;
     &:hover:not(.home-block--active) {
         .home-block__header {
             color: $white-full;
         }
-    }
-}
-
-.home-block--active {
-    height: 100vh;
-    .home-block__header--smaller {
-        color: $white-6;
-    }
-    .home-block__navigation {
-        display: block;
     }
 }
 
@@ -129,6 +142,8 @@
 }
 
 
+/* Block headers
+   ========================================================================== */
 .home-block__header {
     margin: 0;
     font-family: $gilda;
@@ -136,7 +151,7 @@
     color: $white-8;
     text-transform: uppercase;
     text-align: center;
-    @include transition(color .3s ease);
+    @include transition(color .15s ease);
     @media (min-width: $screen--big) {
         font-size: 3rem;
     }
@@ -160,6 +175,9 @@
     }
 }
 
+
+/* Block navigation
+   ========================================================================== */
 .home-block__navigation {
     display: none;
     text-align: center;
@@ -180,7 +198,7 @@
     color: $white-full;
     text-decoration: none;
     border-bottom: 1px solid $white-3;
-    @include transition(background .3s ease-in-out);
+    @include transition(background .15s ease);
     &:hover {
         background: $white-3;
         text-decoration: none;
