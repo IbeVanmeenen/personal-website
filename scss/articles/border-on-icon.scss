@@ -67,9 +67,12 @@
 }
 
 .demo-container {
-    padding: 2em;
+    padding: 1em;
     margin: 0 0 2em 0;
     background: $purple-lighter;
+    @media (min-width: $screen--small) {
+        padding: 2em;
+    }
 }
 
 .icon--with-border:before {
