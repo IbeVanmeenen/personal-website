@@ -65,6 +65,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'build/css/style.css': 'scss/style.scss',
+                    'build/css/quotify.css': 'scss/projects/quotify.scss',
                     'build/css/hover-in-only.css': 'scss/articles/hover-in-only.scss',
                     'build/css/border-on-icon.css': 'scss/articles/border-on-icon.scss'
                 }
