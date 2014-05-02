@@ -24,8 +24,14 @@ $quotify-green:         #79bd9a;
 
 /* Styles
    ========================================================================== */
-.quotify {
+a {
+    color: $quotify-green;
+}
 
+.quotify {
+    .main-article__header__sub, .main-article__section__sub {
+        color: $quotify-purple;
+    }
 }
 
 .quotify__header {
