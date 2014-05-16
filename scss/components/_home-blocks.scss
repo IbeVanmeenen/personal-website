@@ -193,7 +193,7 @@
 
 .home-block__navigation__link {
     display: block;
-    padding: 1em;
+    padding: 1em 3em;
     font-family: $gilda;
     color: $white-full;
     text-decoration: none;
@@ -212,4 +212,46 @@
 .home-block__navigation__link__tag {
     display: block;
     font-size: .7em;
+}
+
+
+/* Awward
+   ========================================================================== */
+.home-block__navigation__item--has-awward {
+    position: relative;
+}
+
+.home-block__navigation__link--awward {
+    position: absolute;
+    right: 1em;
+    top: .6em;
+
+    display: block;
+
+    img {
+        display: block;
+        width: 1em;
+
+        @include transition-property (transform);
+        @include transition-duration(1s);
+        @include transition-timing-function(ease-in-out);
+    }
+    &:hover {
+        img {
+            @include transform(rotateY(360deg));
+        }
+    }
+}
+
+.home-block__navigation__link--awwward {
+    &:after {
+        content: 'sotd';
+
+        position: absolute;
+        bottom: -1.5em;
+        left: .2em;
+
+        color: $white-6;
+        font-size: .4em;
+    }
 }
