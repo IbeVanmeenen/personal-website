@@ -19,18 +19,19 @@
     margin-bottom: 2em;
 }
 
-.main-article__header__head, .main-article__header__sub {
-    margin: 0;
-}
-
 .main-article__header__head {
-
+    margin-bottom: .5em;
+    @media (min-width: $screen--small) {
+        margin-bottom: 0;
+    }
 }
 
 .main-article__header__sub {
     color: $green-dark;
     font-size: 1.2em;
+    margin: 0;
 }
+
 
 /* Section
    ========================================================================== */
@@ -38,27 +39,50 @@
     margin-bottom: 4em;
 }
 
-.main-article__section__header {
-
-}
-
 .main-article__section__sub {
     margin-top: 3em;
-    font-size: .8em;
+    font-size: .9em;
     line-height: 180%;
     text-transform: uppercase;
+    color: $green-dark;
 }
 
 
 /* Splash
    ========================================================================== */
 .main-article__splash {
-    background-size: cover;
-    background-attachment: fixed;
-    height: 50vh;
-    margin-bottom: 4em;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 6em;
+    margin: 0 0 2em 0;
+    color: $white-full;
+    @media (min-width: $screen--small) {
+        min-height: 50vh;
+        margin: 0 0 4em 0;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+.main-article__splash--text {
+    padding: 1em;
+    height: auto;
+    font-size: .8em;
+    @media (min-width: $screen--small) {
+      padding: 2em;
+      font-size: 1em;
+    }
 }
 
 .main-article__splash--js {
     background-image: url('#{$backgrounds}/js-splash.jpg');
+}
+
+.main-article__splash--green {
+    background: $green-lighter;
+}
+
+.main-article__splash--purple {
+    background: $purple-lighter;
 }

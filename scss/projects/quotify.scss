@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Stylesheet for Quotify article
+
+   ========================================================================== */
+
+
+/* General config
+   ========================================================================== */
+@import "../config/config";
+
+
+/* Bourbon
+   ========================================================================== */
+@import "../../vendor/bourbon/app/assets/stylesheets/bourbon";
+
+
+/* Colors
+   ========================================================================== */
+$quotify-purple:        #9d9fd0;
+$quotify-green:         #79bd9a;
+
+
+/* Styles
+   ========================================================================== */
+a {
+    color: $quotify-green;
+}
+
+.quotify {
+    .main-article__header__sub, .main-article__section__sub {
+        color: $quotify-purple;
+    }
+}
+
+.quotify__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    text-align: center;
+}
+
+.quofity__header__head {
+    display: block;
+    margin: 0;
+
+    font-family: $gilda;
+    font-size: 5em;
+    color: $quotify-purple;
+}
+
+.quotify__header__navigation {
+    display: block;
+    margin: 2em 0 0;
+}
+
+.quotify__btn {
+    display: inline-block;
+    padding: 1em 2em;
+    margin: 0 1em;
+    border: 1px solid;
+    @include transition(background .2s ease);
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.quotify__btn--purple {
+    border-color: $quotify-purple;
+    color: $quotify-purple;
+    &:hover {
+        background: $quotify-purple;
+        color: $white-full;
+    }
+}
+
+.quotify__btn--green {
+    border-color: $quotify-green;
+    color: $quotify-green;
+    &:hover {
+        background: $quotify-green;
+        color: $white-full;
+    }
+}

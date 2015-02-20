@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ibe Vanmeenen | Controlling ':hover' animations</title>
+
+    <meta name="description" content="Controlling ':hover' animations">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../build/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../build/css/hover-in-only.css" type="text/css">
+
+</head>
+<body>
+    <main role="main">
+        <article class="main-article">
+            <header class="main-article__splash main-article__splash--text main-article__splash--green center-box">
+                <h1>Controlling ':hover' transitions</h1>
+            </header>
+            <section class="center-container main-article__section">
+                <p>
+                    I found a neat little trick to only transition the 'hovering in' or 'hovering out' of an element and thus discarding the hovering out or in. This of course with pure css.
+                </p>
+                <p>
+                    The main and only trick here is to activate or deactivate the transition on the pseudo-class ':hover' of the element when hovering over it.
+                </p>
+                <p>
+                    In the example used here, we will alternate when we transition the pseudo-element '::before'.
+                </p>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Basic - No animation on pseudo-element</h3>
+                    <p>
+                        For starters, no transition is added to the pseudo-element '::before'. I the code below you will see what we will transition on hover later on.
+                    </p>
+                </header>
+                <div class="demo-container center-box">
+                    <button type="button" class="btn-round">
+                        &#10052;
+                    </button>
+                </div>
+<pre>
+<code class="language-scss">
+.btn-round {
+    z-index: 2;
+    position: relative;
+    border: none;
+    font-size: 1.3em;
+    text-align: center;
+    color: $green-light;
+    cursor: pointer;
+    @include transform(translateZ(0));
+    @include transition(all .3s ease);
+    &, &::before {
+        width: 2em;
+        height: 2em;
+        background: $white-full;
+        border-radius: 100%;
+    }
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:hover, &:focus {
+        background: $green-light;
+        color: $white-full;
+        outline: none;
+        &::before {
+            opacity: 0;
+            @include transform(scale(1.5));
+        }
+    }
+}
+</code>
+</pre>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Hover in &amp; out transition</h3>
+                </header>
+                <p>
+                    In this case we have put the transition on the default state of the pseudo-element. Thats why the hover-in and hover-out are now transitioned.
+                </p>
+                <div class="demo-container center-box">
+                    <button type="button" class="btn-round btn-round--hover-all">
+                        &#10052;
+                    </button>
+                </div>
+<pre>
+<code class="language-scss">
+.btn-round--hover-all {
+    &::before {
+        @include transition(all .3s ease);
+    }
+}
+</code>
+</pre>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Hover in transition</h3>
+                </header>
+                <p>
+                    If we put the transition only in the ':hover' pseudo-class of the element, the transition will only happen when hovering, thus only when hovering in.
+                </p>
+                <div class="demo-container center-box">
+                    <button type="button" class="btn-round btn-round--hover-in">
+                        &#10052;
+                    </button>
+                </div>
+<pre>
+<code class="language-scss">
+.btn-round--hover-in {
+    &:hover, &:focus {
+        &::before {
+            @include transition(all .3s ease);
+        }
+    }
+}
+</code>
+</pre>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Hover out transition</h3>
+                </header>
+                <p>
+                    If we put the transition on the element itself, but deactivate it when hovering, the transition will only happen on hovering out.
+                </p>
+                <div class="demo-container center-box">
+                    <button type="button" class="btn-round btn-round--hover-out">
+                        &#10052;
+                    </button>
+                </div>
+<pre>
+<code class="language-scss">
+.btn-round--hover-out {
+    &::before {
+        @include transition(all .3s ease);
+    }
+    &:hover, &:focus {
+        &::before {
+            @include transition(none);
+        }
+    }
+}
+</code>
+</pre>
+            </section>
+            <section class="center-container main-article__section">
+                <header>
+                    <h3>Full code</h3>
+                </header>
+                <p>
+                    That is it. You can have a look at the full code below.
+                </p>
+<pre>
+<code class="language-scss">
+.btn-round {
+    z-index: 2;
+    position: relative;
+    border: none;
+    font-size: 1.3em;
+    text-align: center;
+    color: $green-light;
+    cursor: pointer;
+    @include transform(translateZ(0));
+    @include transition(all .3s ease);
+    &, &::before {
+        width: 2em;
+        height: 2em;
+        background: $white-full;
+        border-radius: 100%;
+    }
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:hover, &:focus {
+        background: $green-light;
+        color: $white-full;
+        outline: none;
+        &::before {
+            opacity: 0;
+            @include transform(scale(1.5));
+        }
+    }
+}
+
+.btn-round--hover-all {
+    &::before {
+        @include transition(all .3s ease);
+    }
+}
+
+.btn-round--hover-in {
+    &:hover, &:focus {
+        &::before {
+            @include transition(all .3s ease);
+        }
+    }
+}
+
+.btn-round--hover-out {
+    &::before {
+        @include transition(all .3s ease);
+    }
+    &:hover, &:focus {
+        &::before {
+            @include transition(none);
+        }
+    }
+}
+</code>
+</pre>
+            </section>
+            <section class="center-container main-article__section">
+                <small>
+                    Note that all examples are written in scss and <a href="http://bourbon.io/">Bourbon</a> is used for the transform and transition mixins. &#9786;
+                </small>
+            </section>
+        </article>
+        <section id="disqus_thread" class="center-container">
+             <script>
+                var disqus_shortname = 'ibevanmeenen';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        </section>
+    </main>
+
+    <!-- Webfont -->
+    <script>
+        WebFontConfig={google:{families:["Gilda+Display::latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+    </script>
+
+    <!-- JS -->
+    <script async src="../vendor/prism/prism.js"></script>
+    <script async src="../vendor/prism/components/prism-scss.min.js"></script>
+</body>
+</html>

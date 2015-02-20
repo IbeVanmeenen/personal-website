@@ -6,92 +6,140 @@
 
     <title>Ibe Vanmeenen</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="Ibe Vanmeenen | Web Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="build/css/style.css" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="build/css/style.css" type="text/css">
 </head>
 <body>
-    <header class="center-container main-header">
-        <h1 class="main-header__head">Ibe Vanmeenen</h1>
-        <h2 class="main-header__sub">Web Developer</h2>
-    </header>
-
-    <nav role="navigation" class="center-container main-navigation">
-        <section class="main-navigation__column">
+    <main id="home-blocks" class="home-blocks">
+        <section id="home-block--one" class="home-block home-block--one home-block--green">
             <header>
-                <h3 class="main-navigation__header">
-                    <small>private</small>
-                    Articles
-                </h3>
+                <h1 class="home-block__header">
+                    Ibe Vanmeenen
+                </h1>
+                <h2 class="home-block__header home-block__header--sub">
+                    Web Developer
+                </h2>
             </header>
-            <ul>
-                <li>
-                    <a href="/articles/flexslider-url-targeting.html" class="main-navigation__link">
-                        Flexslider: url-targeting
-                    </a>
-                </li>
-            </ul>
         </section>
-        <section class="main-navigation__column">
+        <section id="home-block--two" class="home-block home-block--two home-block--link home-block--blue">
             <header>
-                <h3 class="main-navigation__header">
-                    <small>Professional</small>
-                    Articles
-                </h3>
+                <h2 class="home-block__header home-block__header--smaller">
+                    Articles &amp; Talks
+                </h2>
             </header>
-            <ul>
-                <li>
-
-                </li>
-            </ul>
+            <nav class="home-block__navigation">
+                <header>
+                    <h3 class="home-block__navigation__header">
+                        Articles
+                    </h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="./articles/border-on-icon-font-icon.html" class="js-home-block__navigation__link home-block__navigation__link">
+                            Border on a icon-font icon
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./articles/controlling-hover-transitions.html" class="js-home-block__navigation__link home-block__navigation__link">
+                            Controlling ':hover' transitions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./articles/flexslider-url-targeting.html" class="js-home-block__navigation__link home-block__navigation__link">
+                            Flexslider: url-targeting
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://bundles.kunstmaan.be/news/so-how-did-we-implement-our-new-front-end-development-workflow-into-symfony" class="js-home-block__navigation__link home-block__navigation__link">
+                            Grunt, Bower and Symfony (Kunstmaan)
+                        </a>
+                    </li>
+                </ul>
+                <header>
+                    <h3 class="home-block__navigation__header">
+                        Talks
+                    </h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="http://www.kunstmaan.be/meetups/20140409-angularjs/#talk2" class="js-home-block__navigation__link home-block__navigation__link">
+                            Showcase extradeluxe.be (AngularJs)
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </section>
-        <section class="main-navigation__column">
+        <section id="home-block--three" class="home-block home-block--three home-block--link home-block--purple">
             <header>
-                <h3 class="main-navigation__header">
-                    <small>Resent</small>
+                <h2 class="home-block__header home-block__header--smaller">
                     Projects
-                </h3>
-                <h4 class="main-navigation__sub-header">
-                    Private
-                </h4>
+                </h2>
             </header>
-            <ul>
-                <li>
-                    <a href="http://ksatvlinderke.be/" target="_blank" class="main-navigation__link">
-                        KSA 't Vlinderke
-                    </a>
-                </li>
-                <li>
-                    <a href="http://jorevanmeenen.be/" target="_blank" class="main-navigation__link">
-                        Jore Vanmeenen
-                    </a>
-                </li>
-            </ul>
-            <header>
-                <h4 class="main-navigation__sub-header">
-                    Professional
-                </h4>
-            </header>
-            <ul>
-                <li>
-                    <a href="http://lyric.lapperre.be/nl" target="_blank" class="main-navigation__link">
-                        Lapperre Lyric
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.telenetwifi.be/nl" target="_blank" class="main-navigation__link">
-                        Telenet Wifi
-                    </a>
-                </li>
-            </ul>
+            <nav class="home-block__navigation">
+                <header>
+                    <h4 class="home-block__navigation__header">
+                        Private
+                    </h4>
+                </header>
+                <ul>
+                    <li>
+                        <a href="http://ksatvlinderke.be/" class="js-home-block__navigation__link home-block__navigation__link">
+                            KSA 't Vlinderke
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jorevanmeenen.be/" class="js-home-block__navigation__link home-block__navigation__link">
+                            Jore Vanmeenen
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./projects/quotify.html" class="js-home-block__navigation__link home-block__navigation__link">
+                            Quotify
+                        </a>
+                    </li>
+                </ul>
+                <header>
+                    <h4 class="home-block__navigation__header">
+                        Professional
+                    </h4>
+                </header>
+                <ul>
+                    <li>
+                        <a href="https://operaballet.be/nl" class="js-home-block__navigation__link home-block__navigation__link">
+                            Kunsthuis
+                        </a>
+                    </li>
+                    <li class="home-block__navigation__item--has-awward">
+                        <a href="http://extradeluxe.be/" class="js-home-block__navigation__link home-block__navigation__link">
+                            Extra Deluxe
+                        </a>
+                        <a href="http://www.awwwards.com/web-design-awards/de-vlaamse-kust-extra-deluxe" class="home-block__navigation__link--awward home-block__navigation__link--awwward">
+                            <img src="./img/sotd/ico-laurel.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://sce.be/" class="js-home-block__navigation__link home-block__navigation__link">
+                            SCE
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </section>
-    </nav>
+    </main>
 
-    <main role="main"></main>
+    <!-- Webfont -->
+    <script>
+        WebFontConfig={google:{families:["Gilda+Display::latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+    </script>
 
-    <footer role="footer"></footer>
+    <!-- JS -->
+    <script async src="js/homeblocks.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            app.homeblocks.init();
+        });
+    </script>
 </body>
 </html>

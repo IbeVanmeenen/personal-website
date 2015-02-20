@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                 }
             },
             livereload: {
-                files: ['build/css/style.css', ibevanmeenen.js, ibevanmeenen.html, ibevanmeenen.img, ibevanmeenen.svg],
+                files: ['build/css/*.css', ibevanmeenen.js, ibevanmeenen.html, ibevanmeenen.img, ibevanmeenen.svg],
                 options: {
                     livereload: true
                 }
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9000,
-                    hostname: 'localhost',
+                    hostname: '0.0.0.0',
                     livereload: true,
                     open: true
                 }
@@ -64,7 +64,10 @@ module.exports = function (grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    'build/css/style.css': 'scss/style.scss'
+                    'build/css/style.css': 'scss/style.scss',
+                    'build/css/quotify.css': 'scss/projects/quotify.scss',
+                    'build/css/hover-in-only.css': 'scss/articles/hover-in-only.scss',
+                    'build/css/border-on-icon.css': 'scss/articles/border-on-icon.scss'
                 }
             }
         },
@@ -126,12 +129,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-svg2png');
     grunt.loadNpmTasks('grunt-notify');
 
-    grunt.registerTask('server', [
+    grunt.registerTask('serve', [
         'connect',
         'watch'
     ]);
 
-    grunt.registerTask('default', ['server']);
+    grunt.registerTask('default', ['serve']);
     grunt.registerTask('build', ['sass']);
 
 };

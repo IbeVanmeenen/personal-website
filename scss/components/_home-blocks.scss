@@ -1,0 +1,257 @@
+/* ==========================================================================
+   Home blocks
+
+   ========================================================================== */
+
+/* Container
+   ========================================================================== */
+.home-blocks {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Container states
+   ========================================================================== */
+.home-blocks--two-active, .home-blocks--three-active {
+    @media (min-width: $screen--big) {
+        flex-flow: column wrap;
+        .home-block {
+            height: auto;
+            width: 50vw;
+        }
+        .home-block--one {
+            cursor: pointer;
+            .home-block__header {
+                font-size: 2rem;
+            }
+            .home-block__header--sub {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+.home-blocks--two-active {
+    @media (min-width: $screen--big) {
+        .home-block--one {
+            order: 2;
+            flex: 1 1 0;
+        }
+        .home-block--two {
+            order: 1;
+            flex: 1 1 100%;
+        }
+        .home-block--three {
+            order: 3;
+            flex: 1 1 0;
+        }
+    }
+}
+
+.home-blocks--three-active {
+    @media (min-width: $screen--big) {
+        .home-block--one {
+            order: 1;
+            flex: 1 1 0;
+        }
+        .home-block--two {
+            order: 2;
+            flex: 1 1 0;
+        }
+        .home-block--three {
+            order: 2;
+            flex: 1 1 100%;
+        }
+    }
+}
+
+/* Block
+   ========================================================================== */
+.home-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    height: auto;
+    padding: 2em 0;
+    @media (min-width: $screen--big) {
+        height: 50vh;
+    }
+}
+
+.home-block--one {
+    flex: 1 1 100%;
+    order: 1;
+}
+
+.home-block--two {
+    order: 2;
+}
+
+.home-block--three {
+    order: 3;
+}
+
+.home-block--two, .home-block--three {
+    flex: 1 1 100%;
+    @media (min-width: $screen--big) {
+        flex: 1 1 50%;
+    }
+}
+
+
+/* Block states
+   ========================================================================== */
+.home-block--active {
+    .home-block__header--smaller {
+        color: $white-6;
+    }
+    .home-block__navigation {
+        display: block;
+    }
+}
+
+
+/* Block alternatives
+   ========================================================================== */
+.home-block--link {
+    cursor: pointer;
+    &:hover:not(.home-block--active) {
+        .home-block__header {
+            color: $white-full;
+        }
+    }
+}
+
+.home-block--green {
+    background: $green-lighter;
+}
+
+.home-block--purple {
+    background: $purple-lighter;
+}
+
+.home-block--blue {
+    background: $blue-light;
+}
+
+
+/* Block headers
+   ========================================================================== */
+.home-block__header {
+    margin: 0;
+    font-family: $gilda;
+    font-size: 1.6rem;
+    color: $white-8;
+    text-transform: uppercase;
+    text-align: center;
+    @include transition(color .15s ease);
+    @media (min-width: $screen--big) {
+        font-size: 3rem;
+    }
+}
+
+.home-block__header--sub {
+    font-size: .8rem;
+    letter-spacing: .2em;
+    color: $white-6;
+    @media (min-width: $screen--big) {
+        font-size: 1.3rem;
+    }
+}
+
+.home-block__header--smaller {
+    margin: 0;
+    font-size: 1.2rem;
+    color: $white-8;
+    @media (min-width: $screen--big) {
+        font-size: 2rem;
+    }
+}
+
+
+/* Block navigation
+   ========================================================================== */
+.home-block__navigation {
+    display: none;
+    text-align: center;
+}
+
+.home-block__navigation__header {
+    color: $white-3;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .8rem;
+    margin: 3em 0 1em;
+}
+
+.home-block__navigation__link {
+    display: block;
+    padding: 1em 3em;
+    font-family: $gilda;
+    color: $white-full;
+    text-decoration: none;
+    border-bottom: 1px solid $white-3;
+    @include transition(background .15s ease);
+    &:hover {
+        background: $white-3;
+        text-decoration: none;
+    }
+    @media (min-width: $screen--big) {
+        font-size: .8em;
+        line-height: 140%;
+    }
+}
+
+.home-block__navigation__link__tag {
+    display: block;
+    font-size: .7em;
+}
+
+
+/* Awward
+   ========================================================================== */
+.home-block__navigation__item--has-awward {
+    position: relative;
+}
+
+.home-block__navigation__link--awward {
+    position: absolute;
+    right: 1em;
+    top: .6em;
+
+    display: block;
+
+    img {
+        display: block;
+        width: 1em;
+
+        @include transition-property (transform);
+        @include transition-duration(1s);
+        @include transition-timing-function(ease-in-out);
+    }
+    &:hover {
+        img {
+            @include transform(rotateY(360deg));
+        }
+    }
+}
+
+.home-block__navigation__link--awwward {
+    &:after {
+        content: 'sotd';
+
+        position: absolute;
+        bottom: -1.5em;
+        left: .2em;
+
+        color: $white-6;
+        font-size: .4em;
+    }
+}
