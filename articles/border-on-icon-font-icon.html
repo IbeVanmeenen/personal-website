@@ -9,9 +9,8 @@
     <meta name="description" content="Border on icon-font icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="../build/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="../build/css/border-on-icon.css" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../build/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../build/css/border-on-icon.css" type="text/css">
 
 </head>
 <body>
@@ -139,7 +138,13 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
         </section>
     </main>
 
-    <script src="../vendor/prism/prism.js"></script>
-    <script src="../vendor/prism/components/prism-scss.min.js"></script>
+    <!-- Webfont -->
+    <script>
+        WebFontConfig={google:{families:["Gilda+Display::latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+    </script>
+
+    <!-- JS -->
+    <script async src="../vendor/prism/prism.js"></script>
+    <script async src="../vendor/prism/components/prism-scss.min.js"></script>
 </body>
 </html>

@@ -9,9 +9,7 @@
     <meta name="description" content="Ibe Vanmeenen | Web Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="build/css/style.css" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="build/css/style.css" type="text/css">
 </head>
 <body>
     <main id="home-blocks" class="home-blocks">
@@ -131,7 +129,13 @@
         </section>
     </main>
 
-    <script src="js/homeblocks.js"></script>
+    <!-- Webfont -->
+    <script>
+        WebFontConfig={google:{families:["Gilda+Display::latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+    </script>
+
+    <!-- JS -->
+    <script async src="js/homeblocks.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             app.homeblocks.init();
