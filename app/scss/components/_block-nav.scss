@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.block-nav {
+    margin: 3.1rem 0 5.1rem;
+}
+
+
+/* Item
+   ========================================================================== */
+.block-nav__item {
+    display: block;
+    margin-bottom: 2.3rem;
+    padding-bottom: .6em;
+
+    text-decoration: none;
+    border-bottom: 1px solid $grey--light;
+
+    transition: border-color .3s ease;
+
+    &:hover, &:focus {
+        outline: 0;
+        border-bottom-color: $blue--light;
+    }
+}
+
+.block-nav__item__head {
+    margin-bottom: .4rem;
+}
+
+.block-nav__item__sub-text {
+    margin: 0;
+    color: $grey;
+}

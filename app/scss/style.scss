@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Style
+
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
+   ========================================================================== */
+
+html {
+    //background-image: url('http://basehold.it/i/25');
+}
+
+/* Config
+   ========================================================================== */
+@import "config/config";
+
+
+/* Base
+   ========================================================================== */
+@import "base/base";
+
+
+/* General
+   ========================================================================== */
+@import "general/typography";
+
+
+/* Components
+   ========================================================================== */
+@import "components/content",
+        "components/block-nav",
+        "components/page-header";
+
+
+/* Pages
+   ========================================================================== */
+@import "pages/homepage";

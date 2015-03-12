@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.page-header {
+    padding: 1.6em 2em;
+    margin-bottom: 1.85rem;
+}
+
+
+/* Link
+   ========================================================================== */
+.page-header__link {
+    display: block;
+    text-decoration: none;
+}
+
+
+/* Head
+   ========================================================================== */
+.page-header__head {
+    display: inline-block;
+    margin: 0;
+
+    font-size: 1.4rem;
+}
+
+.page-header__head--sub {
+    margin-left: 1rem;
+
+    text-align: center;
+    font-size: .6rem;
+    text-transform: uppercase;
+}

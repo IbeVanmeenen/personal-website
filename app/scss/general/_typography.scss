@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Typography
+
+   Basic typography of the site.
+   ========================================================================== */
+
+
+/* General
+   ========================================================================== */
+* {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+}
+
+html, body {
+    font-family: $font-family--base;
+    font-size: $text-size--base;
+    line-height: $line-height--base;
+    color: $black;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+/* Paragraphs
+   ========================================================================== */
+p {
+    margin: 2.3rem 0 3.2rem;
+}
+
+p {
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        margin-top: 3rem;
+    }
+}
+
+.text--center {
+    text-align: center;
+}
+
+
+/* Headings
+   ========================================================================== */
+// Shared
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0 .8rem;
+
+    font-family: $font-family--headers;
+    font-weight: normal;
+    line-height: $line-height--headers;
+
+    color: $black;
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+// Specific
+h1 {
+    font-size: 3rem;
+    color: $black;
+
+    @media(min-width: $screen-md) {
+      font-size: 5rem;
+
+    }
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: $black;
+}
+
+h4 {
+    font-size: 1rem;
+    color: $grey;
+
+    @media(min-width: $screen-md) {
+      font-size: 1.3rem;
+    }
+}
