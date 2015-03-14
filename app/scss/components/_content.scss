@@ -18,6 +18,10 @@
     }
 }
 
+.content__section--full-width {
+    max-width: 100%;
+    padding: 1em 2em;
+}
 
 
 
@@ -43,4 +47,19 @@
 .content__section__head--sub {
     font-size: 1.4rem;
     color: $grey;
+}
+
+
+
+/* Section - Screens
+   ========================================================================== */
+.content__section__figure {
+    margin: 0;
+    padding: 0;
+
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
