@@ -32,14 +32,16 @@ p {
     margin: 2.3rem 0 3.2rem;
 }
 
-p {
-    + h1, + h2, + h3, + h4, + h5, + h6 {
-        margin-top: 3rem;
-    }
-}
-
 .text--center {
     text-align: center;
+}
+
+.text--less-margin {
+    margin-bottom: 1rem;
+}
+
+.text--small {
+    font-size: .8rem;
 }
 
 
@@ -94,4 +96,17 @@ h4 {
     @media(min-width: $screen-md) {
       font-size: 1.3rem;
     }
+}
+
+
+/* Lists
+   ========================================================================== */
+.list--reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list--top-margin {
+  margin-top: 1rem;
 }

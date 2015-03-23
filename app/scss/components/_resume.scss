@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Resume
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.resume {
+    padding: 0 2em;
+
+    @media(min-width: $screen-lg) {
+        display: flex;
+    }
+}
+
+
+/* Section
+   ========================================================================== */
+.resume__section {
+    padding: 0 0 2em;
+
+    @media(min-width: $screen-lg) {
+        flex: 1;
+
+        margin: 0 1rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.resume__section--1 {
+    border-top: .2rem solid #90CAF9;
+}
+
+.resume__section--2 {
+    border-top: .2rem solid #A5D6A7;
+}
+
+
+.resume__section--3 {
+    border-top: .2rem solid #B39DDB;
+}
+
+
+
+/* Sub head
+   ========================================================================== */
+.resume__sub-head {
+    font-size: 1.4rem;
+    color: $black;
+    margin-bottom: 0;
+}
+
+.resume__sub-head--section {
+    margin-top: 3rem;
+
+    font-size: 1.3rem;
+    color: $grey;
+    text-transform: uppercase;
+
+    &:first-child {
+        margin-top: 2rem;
+    }
+}
+
+.resume__sub-head__small {
+    display: block;
+
+    font-family: $font-family--base;
+    font-size: .6em;
+    line-height: 2;
+    text-transform: uppercase;
+    color: $grey;
+}
+
+
+
+/* Rating
+   ========================================================================== */
+.resume__rating-list {
+    max-width: 20rem;
+
+    li {
+        overflow: hidden;
+    }
+}
+.resume__rating-list__rating {
+    float: right;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+
+
+/* Link
+   ========================================================================== */
+.resume__link {
+    color: $black;
+    text-decoration: none;
+
+    transition: color .3s ease;
+
+    &:hover, &:focus {
+        color: $blue;
+    }
+}
