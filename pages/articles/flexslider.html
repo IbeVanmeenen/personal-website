@@ -24,42 +24,43 @@
     </header>
 
     <main role="main" class="content">
-        <section class="content__section">
-            <header>
-                <h1 class="content__section__head content__section__head--top">
-                    Flexslider: url-targeting
-                </h1>
-            </header>
+        <article>
+            <section class="content__section">
+                <header>
+                    <h1 class="content__section__head content__section__head--top">
+                        Flexslider: url-targeting
+                    </h1>
+                </header>
 
-            <p>
-                Sliders... we all hate them. But they remain a frequently requested thingy.
-                <a href="http://www.woothemes.com/flexslider/" target="_blank">Flexslider</a> is still my favorite choice as it comes to slider-plugins.
-                In this article I will explain a useful snippit to 'extend' your sliders functionality. That is: url-targeting.
-            </p>
-        </section>
+                <p>
+                    Sliders... we all hate them. But they remain a frequently requested thingy.
+                    <a href="http://www.woothemes.com/flexslider/" target="_blank">Flexslider</a> is still my favorite choice as it comes to slider-plugins.
+                    In this article I will explain a useful snippit to 'extend' your sliders functionality. That is: url-targeting.
+                </p>
+            </section>
 
-        <section class="content__section">
-            <header>
-                <h2 class="content__section__head content__section__head--left">
-                    Url targeting
-                </h2>
-            </header>
+            <section class="content__section">
+                <header>
+                    <h2 class="content__section__head content__section__head--left">
+                        Url targeting
+                    </h2>
+                </header>
 
-            <p>
-                Sometimes it's useful that you can tell trough the url wich slide of the slider should be active. In the following example, we can append a '#slide2' to the url, and the Flexslider will start at the second slide.
-            </p>
+                <p>
+                    Sometimes it's useful that you can tell trough the url wich slide of the slider should be active. In the following example, we can append a '#slide2' to the url, and the Flexslider will start at the second slide.
+                </p>
 
-            <h3 class="content__section__head content__section__head--sub">
-                Get the current url
-            </h3>
+                <h3 class="content__section__head content__section__head--sub">
+                    Get the current url
+                </h3>
 
-            <p>
-                First, you'll need to get the current url.
-                You can use 'document.URL' for that. I prefer this one above 'window.location.href' because you only need to get the url (not set it). It's about 91% faster than window.location.href (<a href="http://jsperf.com/document-url-vs-window-location-href" target="_blank">jsperf test</a>).
-                The url will be stored in the variable 'loc'.
-            </p>
+                <p>
+                    First, you'll need to get the current url.
+                    You can use 'document.URL' for that. I prefer this one above 'window.location.href' because you only need to get the url (not set it). It's about 91% faster than window.location.href (<a href="http://jsperf.com/document-url-vs-window-location-href" target="_blank">jsperf test</a>).
+                    The url will be stored in the variable 'loc'.
+                </p>
 
-            <p>
+                <p>
 <pre>
 <code class="language-javascript">
 var initSlider;
@@ -69,17 +70,17 @@ initSlider = function() {
 };
 </code>
 </pre>
-            </p>
+                </p>
 
-            <h3 class="content__section__head content__section__head--sub">
-                Filter out the slide-number
-            </h3>
+                <h3 class="content__section__head content__section__head--sub">
+                    Filter out the slide-number
+                </h3>
 
-            <p>
-                Now you need to filter out the slide-number in the url you just retrieved. You will remove everything before the last occuring '#', including the '#' itself. You also want to remove the text 'slide'. The resulting number will be stored in the variable 'idx'.
-            </p>
+                <p>
+                    Now you need to filter out the slide-number in the url you just retrieved. You will remove everything before the last occuring '#', including the '#' itself. You also want to remove the text 'slide'. The resulting number will be stored in the variable 'idx'.
+                </p>
 
-            <p>
+                <p>
 <pre>
 <code class="language-javascript">
 var initSlider;
@@ -94,17 +95,17 @@ initSlider = function() {
 };
 </code>
 </pre>
-            </p>
+                </p>
 
-            <h3 class="content__section__head content__section__head--sub">
-                Check if the value is a number
-            </h3>
+                <h3 class="content__section__head content__section__head--sub">
+                    Check if the value is a number
+                </h3>
 
-            <p>
-                Let's be sure that the retrieved number is an legal number. You do this with the 'isNaN' function (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank">more about isNaN()</a>). In the future this will be replaced by the 'Number.isNaN()' function. But the support for this new function is not quite there yet (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN?redirectlocale=en-US&am;redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FNumber%2FisNaN#Browser_compatibility" target="_blank">more about Number.isNaN()</a>).
-            </p>
+                <p>
+                    Let's be sure that the retrieved number is an legal number. You do this with the 'isNaN' function (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank">more about isNaN()</a>). In the future this will be replaced by the 'Number.isNaN()' function. But the support for this new function is not quite there yet (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN?redirectlocale=en-US&am;redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FNumber%2FisNaN#Browser_compatibility" target="_blank">more about Number.isNaN()</a>).
+                </p>
 
-            <p>
+                <p>
 <pre>
 <code class="language-javascript">
 var initSlider;
@@ -122,19 +123,19 @@ initSlider = function() {
 };
 </code>
 </pre>
-            </p>
+                </p>
 
-            <h3 class="content__section__head content__section__head--sub">
-                Initialize the slider
-            </h3>
+                <h3 class="content__section__head content__section__head--sub">
+                    Initialize the slider
+                </h3>
 
-            <p>
-                Now you need to initialize the Flexslider and tell it at which slide he should start at.
-                Flexslider provides you with the 'startAt' property to set the starting slide.
-                Because the first slide has the value 0, you do -1 of the value we got from the url.
-            </p>
+                <p>
+                    Now you need to initialize the Flexslider and tell it at which slide he should start at.
+                    Flexslider provides you with the 'startAt' property to set the starting slide.
+                    Because the first slide has the value 0, you do -1 of the value we got from the url.
+                </p>
 
-            <p>
+                <p>
 <pre>
 <code class="language-javascript">
 var initSlider;
@@ -158,8 +159,9 @@ initSlider = function() {
 };
 </code>
 </pre>
-            </p>
-        </section>
+                </p>
+            </section>
+        </article>
     </main>
 
     <script src="/app/js/prism.js" defer></script>
