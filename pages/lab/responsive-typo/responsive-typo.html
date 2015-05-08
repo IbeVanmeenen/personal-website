@@ -32,7 +32,7 @@
             </header>
             <p>
                 Font-size based on your screen-size... <strong>In pure css please</strong>.
-                Here's a way to do it: put a base font-size in a calc-function together with a viewport height and a viewport width value. Magic.
+                Here's a way to do it: put a base font-size in a calc-function together with a viewport height and a viewport width value. Magic. <a href="https://twitter.com/smashingmag/status/596642216682074112">Source</a>
             </p>
 <pre>
 <code class="language-css">
@@ -52,8 +52,15 @@ html {
 </code>
 </pre>
             <p>
-                <a href="https://twitter.com/smashingmag/status/596642216682074112">Source</a>
+                Or create text that always fills the viewport. No matter what ratio. <a href="http://codepen.io/CrocoDillon/pen/fBJxu">Source</a>
             </p>
+<pre>
+<code class="language-css">
+p {
+    font-size: calc(4vw + 4vh + 2vmin);
+}
+</code>
+</pre>
         </section>
 
         <section class="content__section">
@@ -65,7 +72,7 @@ html {
             <p>
                 For a little demo of this awesome sause:
                 <br>
-                <a href="demo/responsive-typo" class="text-link">Small Demo</a>
+                <a href="demo/responsive-typo" class="text-link">Small Demo - Responsive Base Typo</a>
             </p>
         </section>
     </main>
