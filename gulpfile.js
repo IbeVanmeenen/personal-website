@@ -43,12 +43,13 @@ var websiteIbe = {
     img: resourcesPath + '/img/**/*.{png,jpg,jpeg,gif,svg,webp}',
     fonts: resourcesPath + '/fonts/**/*.{eot,woff,ttf,svg}',
     video: resourcesPath + '/video/**/*.{webm,mp4}',
-    scss: resourcesPath + '/scss/**/*.scss',
+    scss: [resourcesPath + '/scss/**/*.scss', 'pages/lab/css-shapes/demo/scss/magazine.scss'],
 
     js: {},
 
     liveReloadFiles: [
-        distPath + '/css/style.min.css'
+        distPath + '/css/style.min.css',
+        distPath + '/css/magazine.min.css'
     ],
 };
 

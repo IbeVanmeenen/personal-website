@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Style - Magazines
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.art {
+
+}
+
+
+/* Header
+   ========================================================================== */
+.art__header {
+    z-index: 1;
+    position: relative;
+
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+
+    background: #ccc url('../../pages/lab/css-shapes/demo/img/building.jpg') top left no-repeat;
+    background-size: cover;
+
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    shape-margin: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+}
+
+.art__header--left {
+    float: left;
+    width: 50vw;
+    height: 100vh;
+
+    shape-outside: polygon(0 0, 30% 0, 100% 100%, 0 100%);
+    shape-margin: 2rem;
+    clip-path: polygon(0 0, 30% 0, 100% 100%, 0 100%);
+}
+
+.art__header__head {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-size: 1rem;
+}
+
+
+/* Content
+   ========================================================================== */
+.art__content {
+    z-index: 2;
+    position: relative;
+
+    padding: 2em;
+}
+
+.art__content__paragraph {
+    display: block;
+    margin: 0 0 3rem;
+}
+
+.art__content__paragraph__quote {
+    shape-outside: content-box;
+    shape-margin: 0;
+
+    display: block;
+    width: 20rem;
+    margin: 10rem 0 0 0;
+    padding: 0;
+
+    float: left;
+    font-size: 1.3rem;
+    color: tomato;
+}
