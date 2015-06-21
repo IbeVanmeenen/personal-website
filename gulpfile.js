@@ -31,7 +31,7 @@ var resourcesPath = './app';
 var distPath = './dist';
 var bowerComponentsPath = './bower_components';
 
-var ksatvlinderke = {
+var websiteIbe = {
     dist: {
         css: distPath + '/css',
         js: distPath + '/js',
@@ -85,19 +85,15 @@ var headerLines = function(message){
    ========================================================================== */
 // Styles
 gulp.task('styles', function() {
-    return gulp.src(ksatvlinderke.scss)
+    return gulp.src(websiteIbe.scss)
         // Scss -> Css
-        .pipe(plugins.rubySass({
-            sourcemap: false,
-            loadPath: './',
-            bundleExec: true
-        }))
+        .pipe(plugins.sass())
         .on('error', function (err){
             errorLogger('SASS Compilation Error', err.message);
         })
 
         // Combine Media Queries
-        .pipe(plugins.combineMediaQueries())
+        .pipe(plugins.combineMq())
 
         // Prefix where needed
         .pipe(plugins.autoprefixer('last 2 versions'))
@@ -114,7 +110,7 @@ gulp.task('styles', function() {
         }))
 
         // Write to output
-        .pipe(gulp.dest(ksatvlinderke.dist.css))
+        .pipe(gulp.dest(websiteIbe.dist.css))
 
         // Show total size of css
         .pipe(plugins.size({
@@ -125,9 +121,9 @@ gulp.task('styles', function() {
 
 // Images
 gulp.task('images', function () {
-    return gulp.src(ksatvlinderke.img)
+    return gulp.src(websiteIbe.img)
         // Only optimize changed images
-        .pipe(plugins.changed(ksatvlinderke.dist.img))
+        .pipe(plugins.changed(websiteIbe.dist.img))
 
         // Imagemin
         .pipe(plugins.imagemin({
@@ -139,7 +135,7 @@ gulp.task('images', function () {
         }))
 
         // Set desitination
-        .pipe(gulp.dest(ksatvlinderke.dist.img))
+        .pipe(gulp.dest(websiteIbe.dist.img))
 
         // Show total size of images
         .pipe(plugins.size({
@@ -150,9 +146,9 @@ gulp.task('images', function () {
 
 // Fonts
 gulp.task('fonts', function () {
-    return gulp.src(ksatvlinderke.fonts)
+    return gulp.src(websiteIbe.fonts)
         // Set desitination
-        .pipe(gulp.dest(ksatvlinderke.dist.fonts))
+        .pipe(gulp.dest(websiteIbe.dist.fonts))
 
         // Show total size of files
         .pipe(plugins.size({
@@ -165,16 +161,16 @@ gulp.task('fonts', function () {
 gulp.task('watch', function () {
     // Livereload
     plugins.livereload.listen();
-    gulp.watch(ksatvlinderke.liveReloadFiles).on('change', function(file) {
+    gulp.watch(websiteIbe.liveReloadFiles).on('change', function(file) {
         plugins.livereload.changed(file.path);
         plugins.connect.reload();
     });
 
     // Styles
-    gulp.watch(ksatvlinderke.scss, ['styles']);
+    gulp.watch(websiteIbe.scss, ['styles']);
 
     // Images
-    gulp.watch(ksatvlinderke.img, ['images']);
+    gulp.watch(websiteIbe.img, ['images']);
 });
 
 
