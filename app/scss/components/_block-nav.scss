@@ -35,3 +35,18 @@
     margin: 0;
     color: $grey;
 }
+
+
+/* Item - More
+   ========================================================================== */
+.block-nav__item--more {
+    text-align: right;
+    color: $grey;
+    border: 0;
+
+    transition: color .3s ease;
+
+    &:hover, &:focus {
+        color: $blue;
+    }
+}
