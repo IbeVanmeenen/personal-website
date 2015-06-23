@@ -5,6 +5,11 @@
  * @author Lea Verou
  */
 
+.code-block--borderd {
+    border-top: 1px solid $grey--light;
+    border-bottom: 1px solid $grey--light;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
@@ -50,7 +55,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em 0;
+  padding: 2em 0 .5em;
   margin: .5em 0;
   overflow: auto;
 }
