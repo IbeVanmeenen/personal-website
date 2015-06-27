@@ -32,29 +32,42 @@
                         Freeform Pro custom template
                     </h1>
                 </header>
-
                 <p>
-                    <a href="https://solspace.com/software/expressionengine/freeform/">Freeform Pro</a>
+                    For our latest ExpressionEngine project we used <a href="https://solspace.com/software/expressionengine/freeform/">Freeform Pro</a> by Solspace.
+                    This plugin gives you the flexibility and freedom to create any type of form you want.
+                </p>
+                <p>
+                    On this project, we are also using Foundation as our base frontend framework. Mostly for it's grid system.
+                    We wanted to make the output of Freeform Pro so that is fits right in to the Foundation grid system.
+                </p>
+                <p>
+                    Ofcourse, by changing some classes, you can easely convert this into a Bootstrap template or a custom one.
                 </p>
             </section>
 
             <section class="content__section">
                 <header>
                     <h2 class="content__section__head content__section__head--left">
-                        Where
+                        Creating a custom output
                     </h2>
                 </header>
-
-                <p>
-                    Blub
-                </p>
-
                 <h3 class="content__section__head content__section__head--sub">
-                    Blub
+                    Where?
                 </h3>
-
                 <p>
-                    blub
+                    After you have installed the Freeform Pro plugin, you should go to modules > Freeform Pro > Composer Templates. Here you can choose to add a new template.
+                </p>
+                <h3 class="content__section__head content__section__head--sub">
+                    Setup
+                </h3>
+                <p>
+                    Give the template a proper label and name. All the way down the page is where the magic will happen. Your code for the custom output should be placed in the Composer Template field.
+                </p>
+                <h3 class="content__section__head content__section__head--sub">
+                    The code
+                </h3>
+                <p>
+                    Start the composer page and provide a div with the class "row" for each form-row.
                 </p>
             </section>
             <section class="content__section content__section--full-width">
@@ -62,7 +75,47 @@
 <code class="language-twig">
 {composer:page}
     {composer:rows}
-        &lt;div class=&quot;row row--small-gutter&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            ...
+        &lt;/div&gt;
+    {/composer:rows}
+{/composer:page}
+</code>
+</pre>
+            </section>
+            <section class="content__section">
+                <p>
+                    Now add a div with the class "column" for each form-column in your form-row. By using the Variable "column_total" we can deside whitch column class to add.
+                </p>
+            </section>
+            <section class="content__section content__section--full-width">
+<pre class="code-block--borderd">
+<code class="language-twig">
+{composer:page}
+    {composer:rows}
+        &lt;div class=&quot;row&quot;&gt;
+            {composer:columns}
+                &lt;div class=&quot;columns{if composer:column_total == 2} medium-6{/if}{if composer:column_total == 3} medium-4{/if}{if composer:column_total == 4} medium-3{/if}&quot;&gt;
+                    ...
+                &lt;/div&gt;
+            {/composer:columns}
+        &lt;/div&gt;
+    {/composer:rows}
+{/composer:page}
+</code>
+</pre>
+            </section>
+            <section class="content__section">
+                <p>
+                    Now add your fields to the mix. By using the freeform:field field output, you can add extra attributes such as a placeholder or a extra class.
+                </p>
+            </section>
+            <section class="content__section content__section--full-width">
+<pre class="code-block--borderd">
+<code class="language-twig">
+{composer:page}
+    {composer:rows}
+        &lt;div class=&quot;row&quot;&gt;
             {composer:columns}
                 &lt;div class=&quot;columns{if composer:column_total == 2} medium-6{/if}{if composer:column_total == 3} medium-4{/if}{if composer:column_total == 4} medium-3{/if}&quot;&gt;
                     {composer:fields}
@@ -86,6 +139,19 @@
 {/composer:page}
 </code>
 </pre>
+            </section>
+            <section class="content__section">
+                <header>
+                    <h2 class="content__section__head content__section__head--left">
+                        Using a custom template
+                    </h2>
+                </header>
+                <p>
+                    After you created your template, you can now use it in all your forms. When composing your form, you can select your custom theme in the selectbox on the upper-left corner.
+                </p>
+                <p>
+                    That's all. Have fun :)
+                </p>
             </section>
         </article>
     </main>
