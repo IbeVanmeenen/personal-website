@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ibe Vanmeenen</title>
+
+    <meta name="description" content="Ibe Vanmeenen Front-End Developer">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../dist/css/style.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora">
+</head>
+<body>
+    <header class="page-header">
+        <a href="/" class="page-header__link">
+            <h1 class="page-header__head">
+                Ibe Vanmeenen
+            </h1>
+            <h4 class="page-header__head page-header__head--sub">
+                Web developer
+            </h4>
+        </a>
+    </header>
+
+    <main role="main" class="content">
+        <article>
+            <section class="content__section">
+                <header>
+                    <h1 class="content__section__head content__section__head--top">
+                        A small intro into the realm of Promises
+                    </h1>
+                </header>
+                <p>
+                    Intro
+                </p>
+            </section>
+
+
+            <!-- Single -->
+            <section class="content__section">
+                <header>
+                    <h2 class="content__section__head content__section__head--left">
+                        Simple
+                    </h2>
+                </header>
+                <h3 class="content__section__head content__section__head--sub">
+                    Info
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <h3 class="content__section__head content__section__head--sub">
+                    Example
+                </h3>
+            </section>
+            <section class="content__section content__section--full-width">
+<pre class="code-block--borderd">
+<code class="language-javascript">
+var aPromiseFunction = function(value) {
+    // Store value
+    var isOk = value;
+
+    // Make function a promise
+    return new Promise(function(resolve, reject) {
+        console.log(value);
+
+        if (isOk) {
+            // Resolve promise
+            resolve();
+        } else {
+            // Reject promise
+            reject();
+        }
+    });
+};
+
+aPromiseFunction(true).then(function() {
+    // When resolved
+    console.log('awesome');
+}, function(error) {
+    // When rejected
+    console.log(error);
+});
+</code>
+</pre>
+            </section>
+
+
+
+            <!-- Multiple -->
+            <section class="content__section">
+                <header>
+                    <h2 class="content__section__head content__section__head--left">
+                        Multiple Promises
+                    </h2>
+                </header>
+                <h3 class="content__section__head content__section__head--sub">
+                    Info
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <h3 class="content__section__head content__section__head--sub">
+                    Example
+                </h3>
+            </section>
+            <section class="content__section content__section--full-width">
+<pre class="code-block--borderd">
+<code class="language-javascript">
+var totalPersons = 4;
+
+var getClips = function() {
+    var getPersonClips = [];
+
+    // Get all the persons
+    for (var i = 0; i < totalPersons; i++) {
+        getPersonClips.push(new Promise(function(resolve, reject) {
+            getJSON('/data/person' + i + '/clips.json').then(function(data) {
+                personClips.push(data);
+                resolve();
+            }, function() {
+                console.warn('get Error clips person ' + i + ' :(');
+            });
+        }));
+    }
+
+    // When all is ready
+    Promise.all(getPersonClips).then(function() {
+        console.log('done')
+    }, function(error) {
+        console.warn('not all person-clips have been fetched :(');
+    });
+};
+</code>
+</pre>
+            </section>
+        </article>
+    </main>
+
+    <script src="/app/js/prism.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-66063993-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
