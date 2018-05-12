@@ -1,3 +1,8 @@
+:root {
+  --theme-background: #454468;
+  --theme-color: #fff;
+}
+
 body {
   color: var(--theme-color);
   background: var(--theme-background);
