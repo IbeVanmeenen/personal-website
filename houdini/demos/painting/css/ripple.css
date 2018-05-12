@@ -1,0 +1,11 @@
+.ripple-el {
+  --animation-tick: 0;
+  --ripple-color: #9EADEB;
+}
+
+.ripple-el.-animating {
+  --animation-tick: 1000;
+
+  background-image: paint(ripple);
+  transition: box-shadow .15s ease, --animation-tick 1s ease;
+}

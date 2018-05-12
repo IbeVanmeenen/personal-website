@@ -1,0 +1,27 @@
+.btn {
+  display: inline-block;
+  padding: 1em 3em;
+
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #708DF4;
+
+  background-color: #fff;
+  border: 0;
+  border-radius: .3em;
+  cursor: pointer;
+
+  transition: box-shadow .15s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 .1em .5em rgba(0, 0, 0, .3);
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: 0;
+}

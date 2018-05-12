@@ -1,0 +1,21 @@
+body {
+  padding: 2em;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+.article {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.intro {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.article__section {
+  margin-top: 4rem;
+}

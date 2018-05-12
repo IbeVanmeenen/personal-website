@@ -1,0 +1,6 @@
+body {
+  color: var(--theme-color);
+  background: var(--theme-background);
+
+  transition: --theme-color 0.3s ease, --theme-background 0.3s ease;
+}

@@ -1,0 +1,18 @@
+.masonry {
+  display: block;
+}
+
+@media (min-width: 40rem) {
+  .masonry {
+    --masonry-padding: 20;
+    --masonry-columns: 2;
+
+    display: layout(masonry);
+  }
+}
+
+@media (min-width: 80rem) {
+  .masonry {
+    --masonry-columns: 3;
+  }
+}
