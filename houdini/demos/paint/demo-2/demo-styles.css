@@ -11,7 +11,7 @@ body {
 .circle-btn {
   --circle-color: #454468;
 
-  background-image: paint(circle);
+  background-image: paint(circle-2);
   transition: --circle-color 1s ease;
 }
 

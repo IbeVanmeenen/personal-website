@@ -16,7 +16,7 @@ const setupElement = el => {
 };
 
 const installWorklet = async () => {
-  await CSS.paintWorklet.addModule('circle.paint-module.js');
+  await CSS.paintWorklet.addModule('circle-4.paint-module.js');
 };
 
 if ('paintWorklet' in CSS) {

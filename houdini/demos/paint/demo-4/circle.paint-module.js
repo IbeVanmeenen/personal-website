@@ -1,5 +1,5 @@
 registerPaint(
-  'circle',
+  'circle-4',
   class {
     static get inputProperties() {
       return ['--circle-color', '--circle-x', '--circle-y'];
