@@ -8,7 +8,7 @@ registerPaint(
       const y = size.height / 2;
       const radius = Math.min(x, y);
 
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = '#454468';
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, 2 * Math.PI);
       ctx.fill();
