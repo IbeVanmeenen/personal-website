@@ -28,3 +28,9 @@
 .btn:focus {
   outline: 0;
 }
+
+.btn.-resizable {
+  resize: both;
+  min-width: 24rem;
+  min-height: 4rem;
+}

@@ -12,11 +12,7 @@ body {
   --circle-color: #454468;
 
   background-image: paint(circle);
-  transition: --primary-color 1s ease;
-
-  resize: both;
-  min-width: 24rem;
-  min-height: 4rem;
+  transition: --circle-color 1s ease;
 }
 
 .circle-btn:hover {
