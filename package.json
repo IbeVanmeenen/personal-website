@@ -1,31 +1,11 @@
 {
     "name": "ibevanmeenen.be",
     "version": "1.0.0",
-    "dependencies": {},
+    "scripts": {
+        "houdini": "http-server ./houdini"
+    },
     "devDependencies": {
-        "bower": "~1.3",
-
-        "gulp": "~3.9",
-        "gulp-load-plugins": "0.6.0",
-        "gulp-changed": "0.4.1",
-        "gulp-size": "1.0.0",
-        "gulp-shell": "0.2.9",
-        "gulp-livereload": "2.1.1",
-        "gulp-rename":"1.2.0",
-        "gulp-util":"3.0.0",
-        "node-notifier":"3.1.3",
-        "merge-stream": "0.1.5",
-        "gulp-connect": "2.2.0",
-
-        "gulp-sass": "1.3.3",
-        "gulp-strip-css-comments": "1.0.0",
-        "gulp-autoprefixer": "2.1.0",
-        "gulp-minify-css": "0.4.3",
-        "gulp-combine-mq": "0.3.1",
-
-        "gulp-imagemin": "1.0.1",
-
-        "webpagetest": "0.2.4"
+        "http-server": "^0.11.1"
     },
     "engines": {
         "node": ">=0.10.0"

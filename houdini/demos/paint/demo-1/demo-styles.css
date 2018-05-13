@@ -10,8 +10,4 @@ body {
 
 .circle-btn {
   background-image: paint(circle);
-
-  resize: both;
-  min-width: 24rem;
-  min-height: 4rem;
 }

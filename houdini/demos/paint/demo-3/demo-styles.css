@@ -10,6 +10,8 @@ body {
 
 .circle-btn {
   --circle-color: #454468;
+  --circle-x: 0;
+  --circle-y: 0;
 
   background-image: paint(circle);
   transition: --circle-color 1s ease;
