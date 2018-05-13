@@ -9,8 +9,8 @@ body {
 }
 
 .circle-btn {
-	background-image: paint(circle);
+  background-image: paint(circle);
 
-	resize: both;
-	overflow: auto;
+  resize: both;
+  overflow: auto;
 }

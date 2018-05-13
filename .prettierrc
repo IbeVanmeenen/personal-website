@@ -10,9 +10,9 @@
   "parser": "typescript",
   "overrides": [
     {
-      "files": "*.scss",
+      "files": "*.css",
       "options": {
-        "parser": "scss",
+        "parser": "css",
         "singleQuote": false
       }
     },
