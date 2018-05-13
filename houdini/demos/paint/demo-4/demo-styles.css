@@ -13,7 +13,7 @@ body {
   --circle-x: 0;
   --circle-y: 0;
 
-  background-image: paint(circle);
+  background-image: paint(circle-4);
   transition: --circle-color 1s ease, --circle-x 1s ease, --circle-y 1s ease;
 }
 

@@ -3,7 +3,5 @@ const installWorklet = async () => {
 };
 
 if ('paintWorklet' in CSS) {
-  installWorklet().then(() => {
-    console.log('circle worklet installed');
-  });
+  installWorklet().then(() => {});
 }
