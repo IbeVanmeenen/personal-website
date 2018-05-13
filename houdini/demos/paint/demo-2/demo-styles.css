@@ -9,21 +9,16 @@ body {
 }
 
 .circle-btn {
+  --circle-color: #454468;
+
   background-image: paint(circle);
+  transition: --primary-color 1s ease;
 
   resize: both;
   min-width: 24rem;
   min-height: 4rem;
 }
 
-.circle-header {
-  margin: 2rem 0;
-  padding: 1em;
-
-  background: rgba(230, 150, 70, 1);
-  background-image: paint(circle);
-}
-
-.has-circle-bg {
-  background-image: paint(circle);
+.circle-btn:hover {
+  --circle-color: tomato;
 }
