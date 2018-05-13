@@ -1,0 +1,22 @@
+:root {
+  --theme-background: #454468;
+  --theme-color: #fff;
+}
+
+body {
+  color: var(--theme-color);
+  background: var(--theme-background);
+}
+
+.circle-btn {
+  --circle-color: #454468;
+  --circle-x: 0;
+  --circle-y: 0;
+
+  background-image: paint(circle);
+  transition: --circle-color 1s ease, --circle-x 1s ease, --circle-y 1s ease;
+}
+
+.circle-btn:hover {
+  --circle-color: tomato;
+}
