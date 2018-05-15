@@ -5,10 +5,6 @@ registerLayout(
       return ['--masonry-padding', '--masonry-columns'];
     }
 
-    *intrinsicSizes() {
-      /* TODO implement :) */
-    }
-
     *layout(children, edges, constraints, properties) {
       const inlineSize = constraints.fixedInlineSize;
 
@@ -17,7 +13,7 @@ registerLayout(
 
       // We also accept 'auto', which will select the BEST number of columns.
       let columns = parseInt(columnValue);
-      if (columnValue == 'auto' || !columns) {
+      if (columnValue === 'auto' || !columns) {
         columns = Math.ceil(inlineSize / 350); // MAGIC NUMBER \o/.
       }
 
