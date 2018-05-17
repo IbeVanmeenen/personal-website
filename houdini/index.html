@@ -1014,13 +1014,13 @@ API</p>
   --theme-color: #fff;
 }
 
-.body {
+body {
   color: var(--theme-color);
   background: var(--theme-background);
 }
 
 @media screen and (min-width: 40rem) {
-  .body.-fixed-style {
+  body.-fixed-style {
     color: #000;
     background: #fff;
   }
@@ -1119,23 +1119,26 @@ const setTheme = (background, color) =&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 603px; top: 620px;" data-block-id="5ee73e80d41debe3adafec0cf8f58310"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; text-align: right;">
 <h3><a href="https://css-tricks.com/guides/css-custom-properties/" target="_blank"><span style="font-size:0.5em">css custom properties on css-tricks</span></a></h3>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 560px; height: 504px; left: 80px; top: 144px;" data-block-id="cc817dd2506d270da232511ab7d8881c"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 20; font-size: 140%;"><pre class="css"><code style="padding: 15px;">:root {
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 571px; height: 504px; left: 80px; top: 144px;" data-block-id="cc817dd2506d270da232511ab7d8881c"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 20; font-size: 140%;"><pre class="css"><code style="padding: 15px;">:root {
   --theme-background: #46cdcf;
   --theme-color: #fff;
 }
 
-.body {
+body {
   color: var(--theme-color);
   background: var(--theme-background);
+
+  transition: --theme-color .3s ease, 
+              --theme-background .3s ease;
 }
 
 @media screen and (min-width: 40rem) {
-  .body.-fixed-style {
+  body.-fixed-style {
     color: #000;
     background: #fff;
   }
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 400px; top: 601px;" data-block-id="e2f17f73075952b5bb5e1b072293fd29"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(126, 126, 126);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 405px; top: 601px;" data-block-id="e2f17f73075952b5bb5e1b072293fd29"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
 </div></div></section><section data-id="0284c9dc937a11bb272c81c1c3b4f18e">
 
@@ -1288,7 +1291,7 @@ CSS.registerProperty({
 <div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 961px; top: 552px;" data-block-id="0e187565322b87373eff67cb15453375"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 144px;" data-block-id="339c83d4057a92b4287d3516f3133919"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 144px;" data-block-id="339c83d4057a92b4287d3516f3133919"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 1: DEFINE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="a4a6951ac91818a881dddfed4fb1effc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: right;">
@@ -1509,7 +1512,7 @@ accepts a list of length values</p>
 <h3 style="text-align:left"><span style="font-size:0.7em">API</span></h3>
 </div></div></div>
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 81px; top: 341px;" data-block-id="0f2004cc1dea90e490aecaef1eacd3b0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 81px; top: 341px;" data-block-id="0f2004cc1dea90e490aecaef1eacd3b0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 2: USE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 146px; left: 81px; top: 394px;" data-block-id="b92ed9231a337f3cb9e54ab32dd8671e"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="css"><code style="padding: 16px;">body {
@@ -1558,7 +1561,7 @@ accepts a list of length values</p>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="87ee8d28efbe149fe51396818bc529e3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Example</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 572px; height: 504px; left: 80px; top: 144px;" data-block-id="d28a03b9f313225938a5b4538a7f7d25"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 140%;"><pre class="css"><code style="padding: 15px;">.body {
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 572px; height: 504px; left: 80px; top: 144px;" data-block-id="d28a03b9f313225938a5b4538a7f7d25"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 140%;"><pre class="css"><code style="padding: 15px;">body {
   color: var(--theme-color);
   background: var(--theme-background);
   
@@ -1567,7 +1570,7 @@ accepts a list of length values</p>
 }
 
 @media screen and (min-width: 40rem) {
-  .body.-fixed-style {
+  body.-fixed-style {
     color: #000;
     background: #fff;
   }
@@ -1740,7 +1743,7 @@ accepts a list of length values</p>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="328bf4757ccbfc541fcfb8df7e274bf8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">What</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="4cf9015c60d6368078114a810f28fa5b" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 399px; top: 184px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" data-block-id="4cf9015c60d6368078114a810f28fa5b" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 399px; top: 184px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 0);">
 <h2>Worklet</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 320px; left: 79px; top: 256px;" data-block-id="8ae03f1a367343e0b90bbabce96c7e2a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; text-align: left;">
@@ -1757,13 +1760,13 @@ Dom ACCESS</h2>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 320px; left: 79px; top: 373px;" data-block-id="633485c130d9ef2d8f00081621ca5cae"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; text-align: left;">
 <h2>Fast initialization</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 399px; top: 279px;" data-block-id="a3c8ebe689bb669243f0b770a54df4a6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 399px; top: 279px;" data-block-id="a3c8ebe689bb669243f0b770a54df4a6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(255, 255, 0);">
 <p><strong>YES</strong></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 398px; top: 396px;" data-block-id="9ade3a25d62ee1aefed12bdf127e6a90"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 398px; top: 396px;" data-block-id="9ade3a25d62ee1aefed12bdf127e6a90"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(255, 255, 0);">
 <p><strong>YES</strong></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 398px; top: 517px;" data-block-id="489b0df2f1d6d88ea9fb59d76edfbb4f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 398px; top: 517px;" data-block-id="489b0df2f1d6d88ea9fb59d76edfbb4f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; color: rgb(255, 255, 0);">
 <p><strong>NO</strong></p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 400px; left: 798px; top: 279px;" data-block-id="723bff3653df97d27127f0876b7d7f94"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(255, 255, 255);">
@@ -1924,7 +1927,7 @@ Dom ACCESS</h2>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 957px; top: 382px;" data-block-id="f0bfab71791006641fe538c3f815ca2c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>circle.paint-module.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 196px;" data-block-id="c3926e29fb4a2ddeea431b00805dd9fd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 196px;" data-block-id="c3926e29fb4a2ddeea431b00805dd9fd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 0);">
 <h2 style="text-align:left">
 <span style="font-size:1.0em">STEP 1: CREATE </span><span>THE</span><span style="font-size:1.0em"> PAINT module</span>
 </h2>
@@ -1940,7 +1943,7 @@ Dom ACCESS</h2>
 <h3><span style="font-size:0.7em">HOw</span></h3>
 </div></div></section><section data-id="6936e33fe57268bb6c41b94fe34091c6">
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 379px;" data-block-id="3098b165956e8cd091f423e09ebcc376"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 379px;" data-block-id="3098b165956e8cd091f423e09ebcc376"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 2: ADD TO PAINT WORKLET</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 126px; left: 80px; top: 433px;" data-block-id="800beb39b978dbee0f3042c6793e2b90"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">if ('paintWorklet' in CSS) {
@@ -1999,7 +2002,7 @@ Dom ACCESS</h2>
 <span style="font-size:1.0em">STEP 1: CREATE </span><span>THE</span><span style="font-size:1.0em"> PAINT module</span>
 </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 379px;" data-block-id="e4b1f13373010e3ac53d4a1a85a68288"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 379px;" data-block-id="e4b1f13373010e3ac53d4a1a85a68288"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 3: USE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 127px; left: 80px; top: 432px;" data-block-id="c45eb983f93703cd1b4205f74c2e4ccf"><div class="sl-block-content notranslate" style="z-index: 18; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="css"><code style="padding: 16px;">.circle-btn {
@@ -2654,7 +2657,7 @@ el.addEventListener('click', event =&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 315px; left: 872px; top: 370px;" data-block-id="fc75e0502503d62d1c72a3a226b7944c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>masonry.layout-module.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 79px; top: 185px;" data-block-id="e2a2fb1cc0367cd8a605c2b301ecfeec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 79px; top: 185px;" data-block-id="e2a2fb1cc0367cd8a605c2b301ecfeec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 0);">
 <h2 style="text-align:left">
 <span style="font-size:1.0em">STEP 1: CREATE </span><span>THE</span><span style="font-size:1.0em"> LAYOUT module</span>
 </h2>
@@ -2672,7 +2675,7 @@ el.addEventListener('click', event =&gt; {
 </div></div></section><section data-id="5aca0804fe466771aebb189eb34e7259">
 
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 412px;" data-block-id="e787053316c917ef53f97e9d195e7941"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 412px;" data-block-id="e787053316c917ef53f97e9d195e7941"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 2: ADD TO LAYOUT WORKLET</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 126px; left: 80px; top: 466px;" data-block-id="78280da45f323d940a9a2aa257b1f530"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">if ('layoutWorklet' in CSS) {
@@ -2716,7 +2719,7 @@ el.addEventListener('click', event =&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 966px; top: 336px;" data-block-id="439fed6731c8acc8a95addf6090b9216"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(126, 126, 126); font-size: 50%;">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 79px; top: 413px;" data-block-id="4e5219332b0e747e9aa7a7c16f278fa4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 79px; top: 413px;" data-block-id="4e5219332b0e747e9aa7a7c16f278fa4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 0);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 3: USE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1119px; height: 127px; left: 81px; top: 466px;" data-block-id="ab60b5ad2ffdd404bd66cdc4f786defb"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="css"><code style="padding: 16px;">.awesome-container {
@@ -2895,7 +2898,7 @@ el.addEventListener('click', event =&gt; {
 <div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 189px; height: auto;" data-block-id="df0f5b4ab7545e11a977b807946af097"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 441%; transition-duration: 1s; transition-delay: 0.3s;" data-animation-type="slide-up" data-has-custom-html="">
 <h1 class="has-text-shadow">MORE</h1>
 </div></div>
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 386px; height: auto;" data-block-id="792fe95ff2d77ed58c7c11bbd9e8e2a7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; font-size: 400%; transition-duration: 1s; transition-delay: 0.5s; color: rgb(247, 223, 30);" data-animation-type="slide-up" data-has-custom-html="">
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 386px; height: auto;" data-block-id="792fe95ff2d77ed58c7c11bbd9e8e2a7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; font-size: 400%; transition-duration: 1s; transition-delay: 0.5s; color: rgb(255, 255, 0);" data-animation-type="slide-up" data-has-custom-html="">
 <h3 class="has-text-shadow"><span style="font-size:0.7em">possibilities</span></h3>
 </div></div></section><section data-id="e0180845b6c976b813a02406fc706874"><div class="sl-block" data-block-type="text" style="width: 563px; left: 77px; top: 24px; height: auto;" data-block-id="5f0165079279246258ae8b055098d109"><div class="sl-block-style" style="z-index: 10; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
 <h1 style="text-align:left">more possibilities</h1>
@@ -2985,7 +2988,7 @@ API</p>
 <div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 197px; height: auto;" data-block-id="c09af00c49f7e9b99742781cc024e82d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 400%; transition-duration: 1s; transition-delay: 0.3s;" data-animation-type="slide-up" data-has-custom-html="">
 <h1 class="has-text-shadow">Want?</h1>
 </div></div>
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 379px; height: auto;" data-block-id="47c43931008fd03fd636e3a049b73464"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; font-size: 400%; transition-duration: 1s; transition-delay: 0.5s; color: rgb(247, 223, 30);" data-animation-type="slide-up" data-has-custom-html="">
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 379px; height: auto;" data-block-id="47c43931008fd03fd636e3a049b73464"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; font-size: 400%; transition-duration: 1s; transition-delay: 0.5s; color: rgb(255, 255, 0);" data-animation-type="slide-up" data-has-custom-html="">
 <h3 class="has-text-shadow"><span style="font-size:78.4px">use it</span></h3>
 </div></div></section><section data-id="25a3f9905e200efa7991c7e5ea831f2f"><div class="sl-block" data-block-type="text" style="width: 563px; left: 77px; top: 24px; height: auto;" data-block-id="5376c8af3b7c7db589199c0de44f2c9f"><div class="sl-block-style" style="z-index: 12; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
 <h1 style="text-align:left">Use it</h1>
@@ -3135,7 +3138,7 @@ API</p>
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":1231559,"slug":"demystifying-the-future-of-css-with-sparkles-of-js","title":"Demystifying the future of CSS with sparkles of JS","description":"CSS as a language is at the brink of a great revolution. Once such a closed and magical language, it will open up to you and your creativity in all it's glory. CSS will become an easy to expand and polypill language, all while keeping the performance at an up-high. All hail Houdini!","width":1280,"height":720,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/cf9116a1c1f280726cccaf4952ab32cc/thumb.jpg?1526552021","view_count":3,"user":{"id":657285,"username":"ibe","name":"Ibe Vanmeenen","description":"Ibe Vanmeenen is a Web Developer with a big heart for CSS and Javascript. He loves to share his experience with colleagues and the community.","thumbnail_url":"https://www.gravatar.com/avatar/7cc9e80143a2153eba0efbb92b92c03b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":505948,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"fade","theme_id":null,"theme_font":"overpass2","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":116,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1526552021548,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":1231559,"slug":"demystifying-the-future-of-css-with-sparkles-of-js","title":"Demystifying the future of CSS with sparkles of JS","description":"CSS as a language is at the brink of a great revolution. Once such a closed and magical language, it will open up to you and your creativity in all it's glory. CSS will become an easy to expand and polypill language, all while keeping the performance at an up-high. All hail Houdini!","width":1280,"height":720,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/cf9116a1c1f280726cccaf4952ab32cc/thumb.jpg?1526552021","view_count":3,"user":{"id":657285,"username":"ibe","name":"Ibe Vanmeenen","description":"Ibe Vanmeenen is a Web Developer with a big heart for CSS and Javascript. He loves to share his experience with colleagues and the community.","thumbnail_url":"https://www.gravatar.com/avatar/7cc9e80143a2153eba0efbb92b92c03b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":505948,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"fade","theme_id":null,"theme_font":"overpass2","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":116,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1526557487187,"font_typekit":null,"font_google":null,"notes":{}}};
 
 
 			// Use local fonts
