@@ -5,6 +5,8 @@ registerLayout(
       return ['--masonry-padding', '--masonry-columns'];
     }
 
+    *intrinsicSizes() {}
+
     *layout(children, edges, constraints, properties) {
       const inlineSize = constraints.fixedInlineSize;
 
