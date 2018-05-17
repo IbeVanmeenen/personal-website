@@ -4,3 +4,8 @@ body {
 
   transition: --theme-color 0.3s ease, --theme-background 0.3s ease;
 }
+
+.theme-toggle {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}

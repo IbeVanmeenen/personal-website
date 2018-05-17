@@ -522,7 +522,7 @@ LOGIC</strong></p>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 163px; left: 1037px; top: 536px;" data-block-id="9ed66bdfb0409d0df469b3fddb608f7d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 37; background-color: rgb(106, 168, 79); border-style: solid; border-width: 5px; border-color: rgb(106, 168, 79); color: rgb(255, 255, 255); font-size: 60%;">
 <p><strong>Full JS Access</strong></p>
 </div></div></section><section data-id="8f47feef9e486e8cdca66f2c0ab26f13"><div class="sl-block" data-block-type="text" style="height: auto; width: 1123px; left: 77px; top: 251px;" data-block-id="ef7326298748ca7b9eacd07b4fe07b30"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: left; font-size: 300%;">
-<p><strong>Flow of writing your own feature/polyfill</strong></p>
+<p><strong><span style="color:#FFFF00">Flow</span> of writing your own css feature/polyfill</strong></p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 23px; height: auto;" data-block-id="caed3285a5355d4ab1eacae0a8e776ee"><div class="sl-block-style" style="z-index: 12; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
 <h1 style="text-align:left">rendering pipeline</h1>
@@ -1010,17 +1010,20 @@ API</p>
 
 
 <div class="sl-block" data-block-type="code" data-block-id="46c9939c811ef355eb2a855e69100513" style="min-width: 30px; min-height: 30px; width: 560px; height: 504px; left: 80px; top: 144px;"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 140%;"><pre class="css"><code style="padding: 15px;">:root {
-    --theme-background: #46cdcf;
-    --theme-color: #fff;
+  --theme-background: #46cdcf;
+  --theme-color: #fff;
 }
 
-body {
-    color: var(--theme-color);
-    background: var(--theme-background);
+.body {
+  color: var(--theme-color);
+  background: var(--theme-background);
 }
 
-.button {
-    color: var(--theme-color);
+@media screen and (min-width: 40rem) {
+  .body.-fixed-style {
+    color: #000;
+    background: #fff;
+  }
 }</code></pre></div></div>
 
 
@@ -1052,11 +1055,7 @@ body {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="2721756b24c65d2944e843bf0125fb71"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Current state</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 1122px; height: 572px; left: 80px; top: 130px;" data-block-id="ce5fd8f0426c57bab08e061cf67ffab0"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 120%; border-width: 3px; border-color: rgb(247, 223, 30);"><pre class="javascript"><code style="padding: 15px;">const root = document.documentElement;
-
-[].forEach.call(document.getElementsByClassName('js-theme-select'), (el) =&gt; {
-    el.addEventListener('change', switchTheme);
-});
+<div class="sl-block" data-block-type="code" style="width: 1122px; height: 540px; left: 80px; top: 132px;" data-block-id="ce5fd8f0426c57bab08e061cf67ffab0"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 120%; border-width: 3px; border-color: rgb(247, 223, 30);"><pre class="javascript"><code style="padding: 15px;">const root = document.documentElement;
 
 const switchTheme = (e) =&gt; {
   switch(e.target.value) {
@@ -1069,6 +1068,9 @@ const switchTheme = (e) =&gt; {
     case 'tomato':
       setTheme('tomato', '#fff');
       break;
+   case 'broken':
+      setTheme('thisIsNotAColor', 'thisIsAlsoNotAColor');
+      break;
   }
 };
 
@@ -1076,7 +1078,7 @@ const setTheme = (background, color) =&gt; {
   root.style.setProperty('--theme-color', color);
   root.style.setProperty('--theme-background', background);
 };</code></pre></div></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 960px; top: 654px;" data-block-id="ded762f2e3b73d2eb1e65a0630a05d78"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 960px; top: 623px;" data-block-id="ded762f2e3b73d2eb1e65a0630a05d78"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div>
 </section><section data-id="c8e63f8ab02e41a1b80e4e9bb2a2ca00">
@@ -1098,16 +1100,17 @@ const setTheme = (background, color) =&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 720px; top: 68px;" data-block-id="4989300b9093585036defd4154cc0a46"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;" dir="ui">
 <h3><span style="font-size:0.7em">Current state - Strengths</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 268px;" data-block-id="ddf7e27c4aa9ca78b6a4a190dadd6f5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: left;" dir="ui">
-<h2>1. <span style="color:#FFFF00">Easy access</span> by Javascript</h2>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 520px; left: 683px; top: 256px;" data-block-id="ddf7e27c4aa9ca78b6a4a190dadd6f5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<h2>1. <span style="color:#FFFF00">Easy access</span> for js</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 340px;" data-block-id="c1f42284fae37721d72b44de8497995c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;" dir="ui">
-<h2>2. Use of the c in css (<span style="color:#FFFF00">cascade</span>) </h2>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 520px; left: 683px; top: 328px;" data-block-id="c1f42284fae37721d72b44de8497995c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<h2>2. Use of the <span style="color:#FFFF00">Cascade</span>
+</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 412px;" data-block-id="989d7a4d59a88bf31414b04bc9ded260"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 597px; left: 683px; top: 400px;" data-block-id="989d7a4d59a88bf31414b04bc9ded260"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>3. <span style="color:#FFFF00">limited</span> dom-manipulations</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="223b51f921e6154c4612b883763f6653" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 603px; top: 593px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; text-align: right;">
+<div class="sl-block" data-block-type="text" data-block-id="223b51f921e6154c4612b883763f6653" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 603px; top: 593px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; text-align: right;">
 <h3><a href="https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855" target="_blank"><span style="font-size:0.5em">Everything you need to know about CSS Variables</span></a></h3>
 </div></div>
 <div class="sl-block" data-block-type="text" data-block-id="c2a5c43da3e15e735f5cda9c3475d926" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 602px; top: 552px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
@@ -1115,6 +1118,25 @@ const setTheme = (background, color) =&gt; {
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 603px; top: 620px;" data-block-id="5ee73e80d41debe3adafec0cf8f58310"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; text-align: right;">
 <h3><a href="https://css-tricks.com/guides/css-custom-properties/" target="_blank"><span style="font-size:0.5em">css custom properties on css-tricks</span></a></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 560px; height: 504px; left: 80px; top: 144px;" data-block-id="cc817dd2506d270da232511ab7d8881c"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 20; font-size: 140%;"><pre class="css"><code style="padding: 15px;">:root {
+  --theme-background: #46cdcf;
+  --theme-color: #fff;
+}
+
+.body {
+  color: var(--theme-color);
+  background: var(--theme-background);
+}
+
+@media screen and (min-width: 40rem) {
+  .body.-fixed-style {
+    color: #000;
+    background: #fff;
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 400px; top: 601px;" data-block-id="e2f17f73075952b5bb5e1b072293fd29"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
 </div></div></section><section data-id="0284c9dc937a11bb272c81c1c3b4f18e">
 
 
@@ -1136,7 +1158,7 @@ const setTheme = (background, color) =&gt; {
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 1158px; left: 80px; top: 360px;" data-block-id="d4d3d669017c9835827fcdfc4efafed4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left; font-size: 150%;" dir="ui">
 <p><strong><span style="color:#FFFF00"><span style="text-align:center">"--"</span></span><span style="color:rgb(255, 255, 255); text-align:center"> is used as an prefix to </span><span style="color:#FFFF00"><span style="text-align:center">prevent preprocessors</span></span><br>
-<span style="color:rgb(255, 255, 255); text-align:center">of </span><span style="color:#FFFF00"><span style="text-align:center">compiling</span></span></strong><span style="color:rgb(255, 255, 255); text-align:center"><strong> Custom Properties.</strong></span></p>
+<span style="color:rgb(255, 255, 255); text-align:center">of </span><span style="color:#FFFF00"><span style="text-align:center">compiling</span></span></strong><span style="color:rgb(255, 255, 255); text-align:center"><strong> custom properties.</strong></span></p>
 </div></div>
 
 
@@ -1193,14 +1215,17 @@ const setTheme = (background, color) =&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 720px; top: 68px;" data-block-id="b82ebd104dad9d0ec7c86a426cc9a706"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Current state - Problems</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 268px;" data-block-id="b1284ea84b099e61b869c66480514f7c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;" dir="ui"><h2>1. <span style="color:#FFFF00">Not animatable</span>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 288px;" data-block-id="b1284ea84b099e61b869c66480514f7c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;" dir="ui"><h2>1. <span style="color:#FFFF00">Not animatable</span>
 </h2></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 1040px; left: 80px; top: 340px;" data-block-id="0ee924e5d996e7bf4cfc66668ae2b946"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 1040px; left: 80px; top: 360px;" data-block-id="0ee924e5d996e7bf4cfc66668ae2b946"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>2. no way for ua to <span style="color:#FFFF00">optimize</span>​ or <span style="color:#FFFF00">fallback</span>
 </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 412px;" data-block-id="c4aa864a1c97da6a7d7021036a45b841"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 432px;" data-block-id="c4aa864a1c97da6a7d7021036a45b841"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>3. No <span style="color:#FFFF00">editor</span> or <span style="color:#FFFF00">dev-tools</span> support</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 1121px; left: 77px; top: 168px;" data-block-id="b927c3f8045b3fb442bbab9be078ff5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(255, 255, 255); text-align: left;">
+<h1>Downsides</h1>
 </div></div></section><section data-id="b2d7396e609996ce10d1edb6b8702f9f">
 
 
@@ -1221,7 +1246,7 @@ const setTheme = (background, color) =&gt; {
 <h1 style="text-align:center"><strong>DEFINE IT</strong></h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 1279px; left: 1px; top: 288px;" data-block-id="d9cf1867b4a07988a26a18340c1c1768"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); font-size: 200%; text-align: left;">
-<p style="text-align: center;"><strong>Solution quite obvious: </strong></p>
+<p style="text-align:center"><strong>Solution: </strong></p>
 </div></div></section><section data-id="3896aad002299f38ca5aeddac2c2931a">
 
 
@@ -1233,7 +1258,7 @@ const setTheme = (background, color) =&gt; {
 </div></div></div>
 
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 1280px; left: 0px; top: 297px;" data-block-id="64dbada850ff3ce610eff7f3382428d3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); font-size: 250%; text-align: left;">
-<h1 style="text-align:center"><strong>Enter houdini</strong></h1>
+<h1 style="text-align:center"><strong>Enter <span style="color:#FFFF00">houdini</span></strong></h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="5a6b130e724169524a213065ddc5b7ef"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">SOLution</span></h3>
@@ -1247,16 +1272,23 @@ const setTheme = (background, color) =&gt; {
 <h3 style="text-align:left"><span style="font-size:0.7em">API</span></h3>
 </div></div></div>
 
-<div class="sl-block" data-block-type="code" style="width: 1121px; height: 205px; left: 80px; top: 247px;" data-block-id="51517c33cfeee977690d6dd78142fc9c"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
+<div class="sl-block" data-block-type="code" style="width: 1121px; height: 401px; left: 81px; top: 195px;" data-block-id="51517c33cfeee977690d6dd78142fc9c"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
   name: '--theme-color',
   syntax: '&lt;color&gt;',
-  initialValue: '#fff',
-  inherits: true
+  inherits: true,
+  initialValue: '#fff'
+});
+
+CSS.registerProperty({
+  name: '--theme-background',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#454468'
 });</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 952px; top: 404px;" data-block-id="0e187565322b87373eff67cb15453375"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(126, 126, 126);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 961px; top: 552px;" data-block-id="0e187565322b87373eff67cb15453375"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 79px; top: 196px;" data-block-id="339c83d4057a92b4287d3516f3133919"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 144px;" data-block-id="339c83d4057a92b4287d3516f3133919"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(247, 223, 30);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 1: DEFINE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="a4a6951ac91818a881dddfed4fb1effc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: right;">
@@ -1273,9 +1305,9 @@ const setTheme = (background, color) =&gt; {
 </div></div></div>
 
 <div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 138px;" data-block-id="4f6bb996a625f23d9f597dedd0c354e9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: left;">
-<h2>Possible values for SYNTAX</h2>
+<h2>Possible values for &lt;<span style="color:#FFFF00">SYNTAX</span>&gt;</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 1120px; height: 383px; left: 80px; top: 196px;" data-block-id="5e8545c82ffc18a8fe36239b0470dded"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="less"><code style="padding: 16px;">&lt;number&gt; // 0, 2, 4.1, ...
+<div class="sl-block" data-block-type="code" style="width: 700px; height: 401px; left: 500px; top: 196px;" data-block-id="5e8545c82ffc18a8fe36239b0470dded"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="less"><code style="padding: 16px;">&lt;number&gt; // 0, 2, 4.1, ...
 &lt;length&gt; // 0, px, rem, ...
 &lt;percentage&gt; // 10%, 0.5%, ...
 &lt;length-percentage&gt; // px, rem, %, ...
@@ -1286,16 +1318,32 @@ const setTheme = (background, color) =&gt; {
 &lt;angle&gt; // deg, grad, rad, ...
 &lt;time&gt; // s, ms
 &lt;resolution&gt; // dpi, dpcm, ...
-&lt;transform-list&gt; // scale(), translate(), rotate(), ...
+&lt;transform-list&gt; // scale(), translate(), ...
 &lt;custom-ident&gt; // test, ground-level, ...</code></pre></div></div>
 
 
 
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="9c5f2f858d5089e6eefe0c13fa1e2101"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: right;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="9c5f2f858d5089e6eefe0c13fa1e2101"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">how</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 188px; left: 1013px; top: 621px;" data-block-id="4c00ad408a9409c0dcbf32e35e5bcf99"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 188px; left: 1013px; top: 621px;" data-block-id="4c00ad408a9409c0dcbf32e35e5bcf99"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
 <h3 style="text-align:right"><a href="https://www.w3.org/TR/css-properties-values-api-1/" target="_blank"><span style="font-size:0.7em">SPEC</span></a></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 400px; height: 401px; left: 80px; top: 196px;" data-block-id="5456faf81420575e98f88a86cccee829"><div class="sl-block-content notranslate" style="z-index: 17; font-size: 130%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
+  name: '--theme-color',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#fff'
+});
+
+CSS.registerProperty({
+  name: '--theme-background',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#454468'
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 240px; top: 549px;" data-block-id="4d9f89acb8e31c7d0e140dc872709e08"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div></section><section data-id="5a0f6f6c434c19d9f8a5182231d91369">
 
 
@@ -1307,7 +1355,7 @@ const setTheme = (background, color) =&gt; {
 </div></div></div>
 
 <div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 138px;" data-block-id="7335a207f1e898ed1d3e1cf998ae2391"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: left;">
-<h2>Possible NOtations for SYNTAX</h2>
+<h2>Possible NOtations for &lt;<span style="color:#FFFF00">SYNTAX</span>&gt;</h2>
 </div></div>
 
 <div class="sl-block" data-block-type="text" style="height: auto; width: 482px; left: 80px; top: 236px;" data-block-id="e0f034bb5498f73b935c9f5dedf4d21f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
@@ -1342,7 +1390,116 @@ accepts a list of length values</p>
 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 26px; height: 26px; left: 657px; top: 374px;" data-block-id="85ba04f9f6ba50b8543d4ec0e9766cec"><div class="sl-block-content" style="z-index: 24;" data-inline-svg="false"><img data-natural-width="24" data-natural-height="24" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/4fb0265efa1bbd6aa425d15efabc0cdd.svg"></div></div>
 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 26px; height: 26px; left: 95px; top: 608px;" data-block-id="4826025a700887731d34f47188145289"><div class="sl-block-content" style="z-index: 26;" data-inline-svg="false"><img data-natural-width="24" data-natural-height="24" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/4fb0265efa1bbd6aa425d15efabc0cdd.svg"></div></div>
 <div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 26px; height: 26px; left: 96px; top: 374px;" data-block-id="0043c74953f24a772948b38c79522e13"><div class="sl-block-content" style="z-index: 27;" data-inline-svg="false"><img data-natural-width="24" data-natural-height="24" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/4fb0265efa1bbd6aa425d15efabc0cdd.svg"></div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 26px; height: 26px; left: 657px; top: 410px;" data-block-id="ffe9edbc394525784ab500c173bec149"><div class="sl-block-content" style="z-index: 28;" data-inline-svg="false"><img data-natural-width="24" data-natural-height="24" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/4fb0265efa1bbd6aa425d15efabc0cdd.svg"></div></div></section><section data-id="ec00ad0585b7fc02a989e2fa0ddb3d4d">
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 26px; height: 26px; left: 657px; top: 410px;" data-block-id="ffe9edbc394525784ab500c173bec149"><div class="sl-block-content" style="z-index: 28;" data-inline-svg="false"><img data-natural-width="24" data-natural-height="24" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/4fb0265efa1bbd6aa425d15efabc0cdd.svg"></div></div></section><section data-id="509febd4905b6f0303542616a73137c0">
+
+
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 23px; height: auto;" data-block-id="86246ef65fb47463c3bfb64c16dd9924"><div class="sl-block-style" style="z-index: 10; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1 style="text-align:left">PROPERTIES AND VALUES</h1>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 80px; top: 70px; height: auto;" data-block-id="59be6a59809d68f33956720747585cff"><div class="sl-block-style" style="z-index: 11; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3 style="text-align:left"><span style="font-size:0.7em">API</span></h3>
+</div></div></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 400px; left: 80px; top: 138px;" data-block-id="4a6297fe01842c95ae03aecb2b3c0830"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: left;">
+<h2>&lt;<span style="color:#FFFF00">inherits</span>&gt; TRUE</h2>
+</div></div>
+
+
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="36988bda650fc002e0bdbdbc51397f26"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: right;">
+<h3><span style="font-size:0.7em">how</span></h3>
+</div></div>
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" style="width: 400px; height: 452px; left: 80px; top: 196px;" data-block-id="06028d601ab55cc91a624b908b229926"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 130%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({    
+  name: '--vertical-spacing',
+  syntax: '&lt;length&gt;',
+  inherits: true,
+  initialValue: 0
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 240px; top: 597px;" data-block-id="e5cc619ad7f7e3470bc73c8db848435f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 699px; height: 452px; left: 501px; top: 196px;" data-block-id="e92dc58e01c13bf5b5ac7fafbfeeee1a"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 17; font-size: 140%;"><pre class="css"><code style="padding: 15px;">.article {
+  --vertical-spacing: 5rem;
+
+  max-width: 20rem;
+  margin: var(--vertical-spacing) auto; /* 5rem */
+}
+
+.article__fig {
+  margin: var(--vertical-spacing) 0; /* 5rem */
+}
+
+.article__fig__img {
+  margin: var(--vertical-spacing) 0; /* 5rem */
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 960px; top: 603px;" data-block-id="c36e7cea548efb1748d2e5a58fd67bd3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
+</div></div></section><section data-id="4edaf4803fcfa2fcbac6376186559e7d">
+
+
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 23px; height: auto;" data-block-id="6195dd304d2274e3009d5cc9e86a5654"><div class="sl-block-style" style="z-index: 10; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1 style="text-align:left">PROPERTIES AND VALUES</h1>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 80px; top: 70px; height: auto;" data-block-id="c04807a125267b9a95d0277e6eba14e3"><div class="sl-block-style" style="z-index: 11; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3 style="text-align:left"><span style="font-size:0.7em">API</span></h3>
+</div></div></div>
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="f0f9839c98379cc040d9c3510ce617f9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: right;">
+<h3><span style="font-size:0.7em">how</span></h3>
+</div></div>
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" style="width: 400px; height: 452px; left: 80px; top: 196px;" data-block-id="5dcd613d048ede909fb609208efa2ae0"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 130%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({    
+  name: '--vertical-spacing',
+  syntax: '&lt;length&gt;',
+  inherits: true,
+  initialValue: 0
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 240px; top: 597px;" data-block-id="f3d355003bbf8ba8e99c69bd8bbbfafe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 699px; height: 452px; left: 501px; top: 196px;" data-block-id="1eed997b04e548af6ac1e6efcac8bf7e"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 16; font-size: 140%;"><pre class="css"><code style="padding: 15px;">.article {
+  --vertical-spacing: 5rem;
+
+  max-width: 20rem;
+  margin: var(--vertical-spacing) auto; /* 5rem */
+}
+
+.article__fig {
+  margin: var(--vertical-spacing) 0; /* 0 */
+}
+
+.article__fig__img {
+  margin: var(--vertical-spacing) 0; /* 0 */
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 960px; top: 603px;" data-block-id="ff9a9c6d89ff36ab7551e2af33888ccd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(126, 126, 126);">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 400px; left: 80px; top: 138px;" data-block-id="6b6a37aac74b61e397daa90dbfda3d6e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(255, 255, 255); text-align: left;">
+<h2>&lt;<span style="color:#FFFF00">inherits</span>&gt; false</h2>
+</div></div></section><section data-id="ec00ad0585b7fc02a989e2fa0ddb3d4d">
 
 
 <div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 23px; height: auto;" data-block-id="c73d185aa1ec22ff9881c7f87955fb18"><div class="sl-block-style" style="z-index: 10; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -1356,28 +1513,34 @@ accepts a list of length values</p>
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 2: USE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 146px; left: 81px; top: 394px;" data-block-id="b92ed9231a337f3cb9e54ab32dd8671e"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="css"><code style="padding: 16px;">body {
-    color: var(--theme-color);
-    background: var(--theme-background);
+  color: var(--theme-color);
+  background: var(--theme-background);
 }</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 963px; top: 496px;" data-block-id="d6defa42c6e14f2dee473f81f8fc0e2d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 491px; height: 140px; left: 81px; top: 171px;" data-block-id="94432c7c6b19725bb66d29d55bcf0fae"><div class="sl-block-content notranslate" style="z-index: 15; border-width: 1px; border-color: rgb(102, 102, 102);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 399px; height: 140px; left: 81px; top: 171px;" data-block-id="94432c7c6b19725bb66d29d55bcf0fae"><div class="sl-block-content notranslate" style="z-index: 15; border-width: 1px; border-color: rgb(102, 102, 102);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
   name: '--theme-color',
   syntax: '&lt;color&gt;',
-  initialValue: '#111',
-  inherits: true
+  inherits: true,
+  initialValue: '#fff'
 });</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 334px; top: 284px;" data-block-id="3613213c0f4a3f5979bf807979381b49"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(126, 126, 126); font-size: 50%;">
-<p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
-</div></div>
+
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 747px; left: 79px; top: 141px;" data-block-id="0598b36ced1f0967ccfa650e57876214"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(170, 170, 170); font-size: 50%;">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 1: DEFINE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="f022b4cf27058b7b3ca755ad70406701"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">how</span></h3>
 </div></div>
-</section><section data-id="2c84212b31905779a76bd1aa3aa84c16">
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 720px; height: 140px; left: 480px; top: 171px;" data-block-id="d2b2e60ae36573238afa504eaf0994e6"><div class="sl-block-content notranslate" style="z-index: 20; border-width: 1px; border-color: rgb(102, 102, 102);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">CSS.registerProperty({
+  name: '--theme-background',
+  syntax: '&lt;color&gt;',
+  inherits: true,
+  initialValue: '#454468'
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 963px; top: 281px;" data-block-id="f04799ad32856110cd3f80dd7ba73c8b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(126, 126, 126); font-size: 50%;">
+<p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
+</div></div></section><section data-id="2c84212b31905779a76bd1aa3aa84c16">
 
 
 <div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 23px; height: auto;" data-block-id="0ebecc4d9c49de81e96e2e00a4119ba1"><div class="sl-block-style" style="z-index: 10; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -1395,18 +1558,24 @@ accepts a list of length values</p>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 297px; left: 903px; top: 68px;" data-block-id="87ee8d28efbe149fe51396818bc529e3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Example</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 560px; height: 504px; left: 80px; top: 144px;" data-block-id="d28a03b9f313225938a5b4538a7f7d25"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 140%;"><pre class="css"><code style="padding: 15px;">body {
-    color: var(--theme-color);
-    background: var(--theme-background);
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 572px; height: 504px; left: 80px; top: 144px;" data-block-id="d28a03b9f313225938a5b4538a7f7d25"><div class="sl-block-content notranslate" data-highlight-theme="obsidian" style="z-index: 13; font-size: 140%;"><pre class="css"><code style="padding: 15px;">.body {
+  color: var(--theme-color);
+  background: var(--theme-background);
+  
+  transition: --theme-color .3s ease, 
+              --theme-background .3s ease;
 }
 
-.button {
-    color: var(--theme-color);
+@media screen and (min-width: 40rem) {
+  .body.-fixed-style {
+    color: #000;
+    background: #fff;
+  }
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 400px; top: 601px;" data-block-id="3a716e3f5d9d5b9eab8fec33dfa227ad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 410px; top: 601px;" data-block-id="3a716e3f5d9d5b9eab8fec33dfa227ad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.css</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="iframe" style="min-width: 30px; min-height: 30px; width: 560px; height: 504px; left: 640px; top: 144px;" data-block-id="5458e709b55749d387ba350dfc9f866e"><div class="sl-block-content" style="z-index: 15;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock" data-src="https://ibevanmeenen.me/houdini/demos/prop-and-values/demo-2/"></iframe></div></div>
+<div class="sl-block" data-block-type="iframe" style="min-width: 30px; min-height: 30px; width: 548px; height: 504px; left: 652px; top: 144px;" data-block-id="5458e709b55749d387ba350dfc9f866e"><div class="sl-block-content" style="z-index: 15;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock" data-src="https://ibevanmeenen.me/houdini/demos/prop-and-values/demo-2/"></iframe></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 600px; top: 655px;" data-block-id="e768a3fea6b27b4730a54e08d70c7874"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;">
 <h3 style="text-align:right"><a href="https://ibevanmeenen.me/houdini/demos/prop-and-values/demo-2/" target="_blank"><span style="font-size:0.7em"><strong>Demo</strong></span></a></h3>
 </div></div></section><section data-id="f315ab44c54dfa118dab504f0e7611e6">
@@ -1429,9 +1598,10 @@ accepts a list of length values</p>
 </div></div>
 <div class="sl-block" data-block-type="image" data-block-id="d409c451c0410180ca71c92ab66f2eaa" style="min-width: 4px; min-height: 4px; width: 874px; height: 46px; left: 80px; top: 285px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="874" data-natural-height="46" style="" data-lazy-loaded="" data-src="demystifying-the-future-of-css-with-sparkles-of-js/3211544a175e9d76ca4755dbabe44a6c.png"></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 216px;" data-block-id="7b77d49dc49efeb14b60ee806e1176e2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;">
-<h2>still behind a flag!</h2>
+<h2>
+<span style="color:#FFFF00">Warning:</span> still behind a flag!</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 399px;" data-block-id="c2c9dd2c96ccc7815d00dcb74ea64519"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(247, 223, 30); text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 399px;" data-block-id="c2c9dd2c96ccc7815d00dcb74ea64519"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 0); text-align: left;">
 <h2>Check if available:</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 171px; left: 81px; top: 464px;" data-block-id="cf14735c93e2fc6e429d08eb626c9f7a"><div class="sl-block-content notranslate" style="z-index: 17; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">if (CSS.registerProperty) {
@@ -1458,24 +1628,24 @@ accepts a list of length values</p>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="d871097722c2a96c8d61a9c6ad7ed05d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Conclusion</span></h3>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 201px;" data-block-id="030940a7cac24b85c06eee644f5880d8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 201px;" data-block-id="030940a7cac24b85c06eee644f5880d8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>1. <span style="color:#FFFF00">Easy access</span> by Javascript</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 273px;" data-block-id="2826827b317bfb7151cba90fcaff01e8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 273px;" data-block-id="2826827b317bfb7151cba90fcaff01e8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>2. Use of the c in css (<span style="color:#FFFF00">cascade</span>) </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 345px;" data-block-id="31b3bb1054a57b836a3d20c30219c198"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 345px;" data-block-id="31b3bb1054a57b836a3d20c30219c198"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>3. <span style="color:#FFFF00">limited</span> dom-manipulations</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 413px;" data-block-id="983d04d62d9bd0b1e78d56ae470d4131"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 413px;" data-block-id="983d04d62d9bd0b1e78d56ae470d4131"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>4. properties are <span style="color:#FFFF00">animatable</span>
 </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 1040px; left: 80px; top: 485px;" data-block-id="662f484894ddd1d387602a710be93d6f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 485px;" data-block-id="662f484894ddd1d387602a710be93d6f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>5. ua can <span style="color:#FFFF00">optimize</span>​ and <span style="color:#FFFF00">fallback</span>
 </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 706px; left: 80px; top: 557px;" data-block-id="40fe687e287d64a6947935d89d27bb0f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(255, 255, 255); text-align: left;" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 640px; left: 80px; top: 557px;" data-block-id="40fe687e287d64a6947935d89d27bb0f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(255, 255, 255); text-align: left;" dir="ui">
 <h2>6. <span style="color:#FFFF00">editor</span> and <span style="color:#FFFF00">dev-tools</span> support</h2>
 </div></div></section><section data-id="ff3e50c11bde50f0053a7f086f6fcdc1" data-background-image="demystifying-the-future-of-css-with-sparkles-of-js/0be0d352c2d71757d738a33f6bffeaea.png"><div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 197px; height: auto;" data-block-id="c19ebe306dcd74eb258faca58ea82f7c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13; font-size: 400%; transition-duration: 1s; transition-delay: 0.3s;" data-animation-type="slide-up" data-has-custom-html="">
 <h1 class="has-text-shadow">Paint</h1>
@@ -1721,7 +1891,7 @@ Dom ACCESS</h2>
 <span style="color:#FFFF00">access</span> the worklet</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 1120px; left: 81px; top: 288px;" data-block-id="f2e147954a015901bd947006e03b887a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;">
-<p style="text-align:left"><span style="font-size:39.2px"><strong><span style="color:#FFFF00">Wait</span> for the modules to be loaded <span style="color:#FFFF00">if needed</span></strong></span></p>
+<p style="text-align:left"><span style="font-size:39.2px"><strong><span style="color:#FFFF00">Wait</span> for <span style="color:#FFFF00">multiple</span> <span style="color:#FFFF00">modules</span> to be loaded <span style="color:#FFFF00">if needed</span></strong></span></p>
 </div></div></section><section data-id="e363d79a4427dc732248fff063fe176b" data-background-image="demystifying-the-future-of-css-with-sparkles-of-js/d3dbc10a3639c52c83fb8a2d323551a8.png">
 
 
@@ -1779,29 +1949,32 @@ Dom ACCESS</h2>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 960px; top: 512px;" data-block-id="a0f697915da12e86ec61528c39cd7471"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>*.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 491px; height: 126px; left: 80px; top: 200px;" data-block-id="18d3ef157acb2d7d0fef3e0e0d5c1259"><div class="sl-block-content notranslate" style="z-index: 13; border-width: 1px; border-color: rgb(102, 102, 102);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">registerPaint('circle', class {
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 24px; height: auto;" data-block-id="53d2514e753e3f4e46cf5aa513e7fb58"><div class="sl-block-style" style="z-index: 14; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;">
+<h1 style="text-align:left">Paint</h1>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 78px; top: 71px; height: auto;" data-block-id="4689baf386cb7210710c8ee8f32dd71a"><div class="sl-block-style" style="z-index: 15; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 15;">
+<h3 style="text-align: left;"><span style="font-size:0.7em">WORKLET</span></h3>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="c4b0b48e432fc4a90a88f4514e90f0ca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: right;">
+<h3><span style="font-size:0.7em">HOw</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 491px; height: 124px; left: 80px; top: 199px;" data-block-id="18c9f6890b381a0999caffa02cd7aea9"><div class="sl-block-content notranslate" style="z-index: 17; border-width: 1px; border-color: rgb(102, 102, 102);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">registerPaint('circle', class {
   static get inputProperties() {}
 
   paint(ctx, size, properties) {}
 });</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 333px; top: 298px;" data-block-id="069e73cebb815ae704b2d8c2288bc167"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(126, 126, 126); font-size: 50%;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 226px; left: 334px; top: 296px;" data-block-id="979b7372c697150c17305806dc7e240a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; color: rgb(126, 126, 126); font-size: 50%;">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>circle.paint-module.js</strong></span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 747px; left: 78px; top: 170px;" data-block-id="c37814f7bfb294d4e52765298e197a97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(170, 170, 170); font-size: 50%;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 482px; left: 78px; top: 170px;" data-block-id="d1bfcf7b66357a2cba561778e9c538d9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(170, 170, 170); font-size: 50%;">
 <h2 style="text-align:left">
 <span style="font-size:1.0em">STEP 1: CREATE </span><span>THE</span><span style="font-size:1.0em"> PAINT module</span>
 </h2>
-</div></div>
-
-
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 24px; height: auto;" data-block-id="53d2514e753e3f4e46cf5aa513e7fb58"><div class="sl-block-style" style="z-index: 18; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 18;">
-<h1 style="text-align:left">Paint</h1>
-</div></div></div>
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 78px; top: 71px; height: auto;" data-block-id="4689baf386cb7210710c8ee8f32dd71a"><div class="sl-block-style" style="z-index: 19; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 19;">
-<h3 style="text-align: left;"><span style="font-size:0.7em">WORKLET</span></h3>
-</div></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="c4b0b48e432fc4a90a88f4514e90f0ca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; color: rgb(255, 255, 255); text-align: right;">
-<h3><span style="font-size:0.7em">HOw</span></h3>
 </div></div></section><section data-id="5669ae6735c5bd994149d8f9e0afdaa4">
 
 <div class="sl-block" data-block-type="text" style="height: auto; width: 309px; left: 606px; top: 170px;" data-block-id="c186d8663361527e31b9eca53523b496"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(170, 170, 170); font-size: 50%;">
@@ -1826,7 +1999,7 @@ Dom ACCESS</h2>
 <span style="font-size:1.0em">STEP 1: CREATE </span><span>THE</span><span style="font-size:1.0em"> PAINT module</span>
 </h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 78px; top: 379px;" data-block-id="e4b1f13373010e3ac53d4a1a85a68288"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(247, 223, 30);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 379px;" data-block-id="e4b1f13373010e3ac53d4a1a85a68288"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(247, 223, 30);">
 <h2 style="text-align:left"><span style="font-size:1.0em">STEP 3: USE</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 1121px; height: 127px; left: 80px; top: 432px;" data-block-id="c45eb983f93703cd1b4205f74c2e4ccf"><div class="sl-block-content notranslate" style="z-index: 18; font-size: 150%; border-width: 3px; border-color: rgb(255, 20, 147);" data-highlight-theme="obsidian"><pre class="css"><code style="padding: 16px;">.circle-btn {
@@ -1847,7 +2020,7 @@ Dom ACCESS</h2>
 <h3><span style="font-size:0.7em">HOw</span></h3>
 </div></div></section><section data-id="a4cc45da3001cad81446d9a35d17c8d5">
 
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 1121px; height: 424px; left: 80px; top: 164px;" data-block-id="dd614eb682daa1fa2388e235174525f3"><div class="sl-block-content notranslate" style="z-index: 10; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">registerPaint('circle', class {
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 1121px; height: 432px; left: 80px; top: 216px;" data-block-id="dd614eb682daa1fa2388e235174525f3"><div class="sl-block-content notranslate" style="z-index: 10; font-size: 150%; border-width: 3px; border-color: rgb(247, 223, 30);" data-highlight-theme="obsidian"><pre class="javascript"><code style="padding: 16px;">registerPaint('circle', class {
   static get inputProperties() {}
 
   paint(ctx, size, properties) {
@@ -1861,20 +2034,25 @@ Dom ACCESS</h2>
     ctx.fill();
   }
 });</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 949px; top: 534px;" data-block-id="e1dffb6dd8f958eee1b1a251b8217bc1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(126, 126, 126);">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 226px; left: 949px; top: 594px;" data-block-id="e1dffb6dd8f958eee1b1a251b8217bc1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(126, 126, 126);">
 <p style="text-align:right"><span style="font-size:0.7em"><strong>circle.paint-module.js</strong></span></p>
 </div></div>
 
 
 
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 24px; height: auto;" data-block-id="2ecbaf221ded6cb574e062ee8b1fb834"><div class="sl-block-style" style="z-index: 13; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 77px; top: 24px; height: auto;" data-block-id="2ecbaf221ded6cb574e062ee8b1fb834"><div class="sl-block-style" style="z-index: 12; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
 <h1 style="text-align:left">Paint</h1>
 </div></div></div>
-<div class="sl-block" data-block-type="text" style="width: 960px; left: 78px; top: 71px; height: auto;" data-block-id="4d2be5420393f88bd2c596874a64313c"><div class="sl-block-style" style="z-index: 14; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;">
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 78px; top: 71px; height: auto;" data-block-id="4d2be5420393f88bd2c596874a64313c"><div class="sl-block-style" style="z-index: 13; opacity: 0.5;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
 <h3 style="text-align: left;"><span style="font-size:0.7em">WORKLET</span></h3>
 </div></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="800059d05b2432ea8895a6f1a5287c33"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255); text-align: right;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 297px; left: 903px; top: 68px;" data-block-id="800059d05b2432ea8895a6f1a5287c33"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(255, 255, 255); text-align: right;">
 <h3><span style="font-size:0.7em">Draw the circle</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 747px; left: 80px; top: 144px;" data-block-id="5a2ccc3e0eeed05d2f4ce5d9b07e04bf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(255, 255, 255);">
+<h2 style="text-align:left">
+<span>PAINT-MODULE: </span><span style="font-size:1.0em"><span style="color:#FFFF00">Paint the cricle</span></span>
+</h2>
 </div></div></section><section data-id="913dbb2414f750057c2187909a9596e7">
 
 
@@ -2957,7 +3135,7 @@ API</p>
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":1231559,"slug":"demystifying-the-future-of-css-with-sparkles-of-js","title":"Demystifying the future of CSS with sparkles of JS","description":"CSS as a language is at the brink of a great revolution. Once such a closed and magical language, it will open up to you and your creativity in all it's glory. CSS will become an easy to expand and polypill language, all while keeping the performance at an up-high. All hail Houdini!","width":1280,"height":720,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/cf9116a1c1f280726cccaf4952ab32cc/thumb.jpg?1526409460","view_count":3,"user":{"id":657285,"username":"ibe","name":"Ibe Vanmeenen","description":"Ibe Vanmeenen is a Web Developer with a big heart for CSS and Javascript. He loves to share his experience with colleagues and the community.","thumbnail_url":"https://www.gravatar.com/avatar/7cc9e80143a2153eba0efbb92b92c03b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":505948,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"fade","theme_id":null,"theme_font":"overpass2","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":114,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1526497966187,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":1231559,"slug":"demystifying-the-future-of-css-with-sparkles-of-js","title":"Demystifying the future of CSS with sparkles of JS","description":"CSS as a language is at the brink of a great revolution. Once such a closed and magical language, it will open up to you and your creativity in all it's glory. CSS will become an easy to expand and polypill language, all while keeping the performance at an up-high. All hail Houdini!","width":1280,"height":720,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/cf9116a1c1f280726cccaf4952ab32cc/thumb.jpg?1526409460","view_count":3,"user":{"id":657285,"username":"ibe","name":"Ibe Vanmeenen","description":"Ibe Vanmeenen is a Web Developer with a big heart for CSS and Javascript. He loves to share his experience with colleagues and the community.","thumbnail_url":"https://www.gravatar.com/avatar/7cc9e80143a2153eba0efbb92b92c03b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":505948,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"fade","theme_id":null,"theme_font":"overpass2","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":116,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1526550884512,"font_typekit":null,"font_google":null,"notes":{}}};
 
 
 			// Use local fonts

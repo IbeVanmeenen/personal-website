@@ -1,0 +1,14 @@
+.article {
+  --vertical-spacing: 5rem;
+
+  max-width: 20rem;
+  margin: var(--vertical-spacing) auto;
+}
+
+.article__fig {
+  margin: var(--vertical-spacing) 0;
+}
+
+.article__fig__img {
+  margin: var(--vertical-spacing) 0;
+}
