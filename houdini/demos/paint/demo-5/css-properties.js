@@ -20,7 +20,14 @@ CSS.registerProperty({
 });
 
 CSS.registerProperty({
-  name: '--animation-tick',
+  name: '--ripple-anim-duration',
+  syntax: '<time>',
+  inherits: false,
+  initialValue: '1s'
+});
+
+CSS.registerProperty({
+  name: '--ripple-anim-tick',
   syntax: '<number>',
   inherits: false,
   initialValue: 0

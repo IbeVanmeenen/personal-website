@@ -1,4 +1,3 @@
-const ANIM_DURATION = 1000;
 const ANIM_CLASS = '-animating';
 
 const setPosition = (event, el) => {
@@ -18,6 +17,9 @@ const stopAnimation = el => {
 };
 
 const setupElement = el => {
+  const duration =
+    CSSNumericValue.parse(getComputedStyle(el).getPropertyValue('--ripple-anim-duration')).to('ms').value || 1000;
+
   let timeout;
 
   el.addEventListener(
@@ -27,7 +29,7 @@ const setupElement = el => {
       startAnimation(event, el);
 
       window.clearTimeout(timeout);
-      timeout = window.setTimeout(() => stopAnimation(el), ANIM_DURATION);
+      timeout = window.setTimeout(() => stopAnimation(el), duration);
     },
     false
   );
