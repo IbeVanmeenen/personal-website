@@ -7,5 +7,5 @@
   --ripple-anim-tick: 1000;
 
   background-image: paint(ripple);
-  transition: box-shadow 0.15s ease, --ripple-anim-tick var(--ripple-anim-duration) ease;
+  transition: --ripple-anim-tick var(--ripple-anim-duration) ease;
 }

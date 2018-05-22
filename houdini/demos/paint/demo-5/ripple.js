@@ -1,10 +1,8 @@
 const ANIM_CLASS = '-animating';
 
 const setPosition = (event, el) => {
-  const x = event.offsetX;
-  const y = event.offsetY;
-
-  el.style.cssText = `--ripple-x: ${x}; --ripple-y: ${y};`;
+  el.attributeStyleMap.set('--ripple-x', event.offsetX);
+  el.attributeStyleMap.set('--ripple-y', event.offsetY);
 };
 
 const startAnimation = (event, el) => {
