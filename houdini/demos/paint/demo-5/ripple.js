@@ -38,7 +38,5 @@ const installWorklet = async () => {
 };
 
 if ('paintWorklet' in CSS) {
-  installWorklet().then(() => {
-    [].forEach.call(document.getElementsByClassName('js-ripple-el'), setupElement);
-  });
+  installWorklet().then([].forEach.call(document.getElementsByClassName('js-ripple-el'), setupElement));
 }

@@ -1,27 +1,9 @@
-.masonry {
-  display: block;
+.ratio {
+  --aspect-ratio: 1.2;
 
-  resize: horizontal;
-  overflow: hidden;
-}
+  display: layout(ratio);
+  width: 20rem;
 
-@media (min-width: 40rem) {
-  .masonry {
-    --masonry-padding: 20;
-    --masonry-columns: 2;
-
-    display: layout(masonry);
-  }
-}
-
-@media (min-width: 80rem) {
-  .masonry {
-    --masonry-columns: 3;
-  }
-}
-
-@media (min-width: 120rem) {
-  .masonry {
-    --masonry-columns: 4;
-  }
+  background: tomato;
+  border: 1em solid navajowhite;
 }

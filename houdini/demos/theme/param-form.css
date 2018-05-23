@@ -1,0 +1,33 @@
+.param-form {
+  display: flex;
+  margin: 2rem auto;
+}
+
+.param-form__group {
+  flex: 1 1 auto;
+
+  width: 9rem;
+  margin: 0 1rem;
+}
+
+.param-form__label {
+  display: block;
+  margin: 0;
+
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: aliceblue;
+}
+
+.param-form__input {
+  width: 100%;
+  margin: 0.3rem 0;
+  padding: 0.5em;
+
+  font-size: 1.3em;
+  font-weight: bold;
+  color: aliceblue;
+
+  background: rgba(0, 0, 0, 0.2);
+  border: 0;
+}

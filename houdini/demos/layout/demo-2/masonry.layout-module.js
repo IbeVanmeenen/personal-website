@@ -10,16 +10,13 @@ registerLayout(
     *layout(children, edges, constraints, properties) {
       const inlineSize = constraints.fixedInlineSize;
 
-      const padding = parseInt(properties.get('--masonry-padding'));
-      const columnValue = properties.get('--masonry-columns').toString();
+      const padding = properties.get('--masonry-padding').value;
+      let columns = properties.get('--masonry-columns').value;
 
-      // We also accept 'auto', which will select the BEST number of columns.
-      let columns = parseInt(columnValue);
-      if (columnValue === 'auto' || !columns) {
-        columns = Math.ceil(inlineSize / 350); // MAGIC NUMBER \o/.
+      if (columns === 'auto' || !columns) {
+        columns = Math.ceil(inlineSize / 350);
       }
 
-      // Layout all children with simply their column size.
       const childInlineSize = (inlineSize - (columns + 1) * padding) / columns;
       const childFragments = yield children.map(child => {
         return child.layoutNextFragment({ fixedInlineSize: childInlineSize });
@@ -29,7 +26,6 @@ registerLayout(
       const columnOffsets = Array(columns).fill(0);
 
       childFragments.forEach(childFragment => {
-        // Select the column with the least amount of stuff in it.
         const min = columnOffsets.reduce(
           (acc, val, idx) => {
             if (!acc || val < acc.val) {
